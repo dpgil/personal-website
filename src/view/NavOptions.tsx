@@ -1,7 +1,6 @@
 import React from "react";
 import { NavOption } from "./";
 import { Page } from "../pages";
-import { Link } from "react-router-dom";
 import { Routes } from "../routes";
 
 const separator = " / ";

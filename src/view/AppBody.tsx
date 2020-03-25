@@ -1,5 +1,5 @@
 import React from "react";
-import { ArtPage, CodePage, LandingPage, MePage, Page } from "../pages";
+import { ArtPage, CodePage, LandingPage, MePage } from "../pages";
 import { Route, Switch } from "react-router";
 import { Routes } from "../routes";
 

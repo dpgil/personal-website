@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Page, ArtPage, CodePage, MePage, LandingPage } from "./pages";
 import { AppBody, AppHeader } from "./view";
-import Routes from "./routes";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
