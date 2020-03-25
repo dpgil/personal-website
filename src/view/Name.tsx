@@ -3,7 +3,7 @@ import React from "react";
 const nameStyle: React.CSSProperties = {
   fontSize: "45px",
   fontWeight: "bold",
-  display: "inline-grid",
+  display: "inline-block",
   padding: "0px 10px"
 };
 
