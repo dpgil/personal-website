@@ -7,6 +7,7 @@ const headerStyle: React.CSSProperties = {
   fontSize: "45px",
   fontFamily: "Helvetica,Verdana,sans-serif",
   fontWeight: "bold"
+  //   textAlign: "left"
 };
 
 export const AppHeader = React.memo(function AppHeader() {
