@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import { Name } from "./";
 
 const headerStyle: React.CSSProperties = {
   // todo: delete outline
@@ -16,15 +17,4 @@ export const AppHeader = React.memo(function AppHeader() {
       </Grid>
     </div>
   );
-});
-
-const nameStyle: React.CSSProperties = {
-  fontSize: "45px",
-  fontFamily: "Helvetica,Verdana,sans-serif",
-  fontWeight: "bold",
-  display: "inline-grid"
-};
-
-export const Name = React.memo(function Name() {
-  return <span style={nameStyle}>DANIEL GIL</span>;
 });
