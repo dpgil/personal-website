@@ -7,23 +7,49 @@ const navOptionsStyle: React.CSSProperties = {
   display: "inline-block"
 };
 
-export const NavOptions: React.FC = () => {
+interface NavOptionsProps {
+  setSelectedPage: (page: Page) => void;
+}
+
+export enum Page {
+  LANDING,
+  ART,
+  CODE,
+  ME
+}
+
+export const NavOptions: React.FC<NavOptionsProps> = props => {
+  const { setSelectedPage } = props;
+
+  const onClick = (page: Page) => {
+    return () => {
+      setSelectedPage(page);
+    };
+  };
+
   return (
     <div style={navOptionsStyle}>
-      <NavOption name="art" />
+      <NavOption onClick={onClick(Page.ART)} name="art" />
       {separator}
-      <NavOption name="code" />
+      <NavOption onClick={onClick(Page.CODE)} name="code" />
       {separator}
-      <NavOption name="me" />
+      <NavOption onClick={onClick(Page.ME)} name="me" />
     </div>
   );
 };
 
 interface NavOptionProps {
   name: string;
+  onClick?: () => void;
 }
 
 // todo: add hover and click styling
 const NavOption: React.FC<NavOptionProps> = props => {
-  return <span>{props.name}</span>;
+  const onClick = () => {
+    if (props.onClick) {
+      props.onClick();
+    }
+  };
+
+  return <span onClick={onClick}>{props.name}</span>;
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { AppBody, AppHeader } from "./view";
 import { makeStyles } from "@material-ui/core/styles";
+import { Page } from "./view/NavOptions";
 
 const useStyles = makeStyles({
   root: {
@@ -17,11 +18,12 @@ const useStyles = makeStyles({
 
 export const App: React.FC = () => {
   const classes = useStyles();
+  const [selectedPage, setSelectedPage] = React.useState<Page>(Page.LANDING);
 
   return (
     <div className={classes.root}>
-      <AppHeader />
-      <AppBody />
+      <AppHeader setSelectedPage={setSelectedPage} />
+      <AppBody selectedPage={selectedPage} />
     </div>
   );
 };

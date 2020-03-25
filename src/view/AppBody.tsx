@@ -1,4 +1,9 @@
 import React from "react";
+import { Page } from "./NavOptions";
+import { ArtPage } from "../pages/art/ArtPage";
+import { CodePage } from "../pages/code/CodePage";
+import { MePage } from "../pages/me/MePage";
+import { LandingPage } from "../pages/landing/LandingPage";
 
 const bodyStyle: React.CSSProperties = {
   // todo: delete outline
@@ -6,6 +11,23 @@ const bodyStyle: React.CSSProperties = {
   marginTop: "5px"
 };
 
-export const AppBody: React.FC = () => {
-  return <div style={bodyStyle}>body</div>;
+interface AppBodyProps {
+  selectedPage: Page;
+}
+
+const getPageComponent = (page: Page) => {
+  switch (page) {
+    case Page.ART:
+      return <ArtPage />;
+    case Page.CODE:
+      return <CodePage />;
+    case Page.ME:
+      return <MePage />;
+    default:
+      return <LandingPage />;
+  }
+};
+
+export const AppBody: React.FC<AppBodyProps> = props => {
+  return <div style={bodyStyle}>{getPageComponent(props.selectedPage)}</div>;
 };

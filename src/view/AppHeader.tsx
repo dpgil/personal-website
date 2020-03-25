@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Name, NavOptions } from "./";
+import { Page } from "./NavOptions";
 
 const headerStyle: React.CSSProperties = {
   // todo: delete outline
@@ -10,12 +11,16 @@ const headerStyle: React.CSSProperties = {
   fontFamily: "Helvetica,Verdana,sans-serif"
 };
 
-export const AppHeader: React.FC = () => {
+interface AppHeaderProps {
+  setSelectedPage: (page: Page) => void;
+}
+
+export const AppHeader: React.FC<AppHeaderProps> = props => {
   return (
     <div style={headerStyle}>
       <Grid>
         <Name />
-        <NavOptions />
+        <NavOptions setSelectedPage={props.setSelectedPage} />
       </Grid>
     </div>
   );
