@@ -7,7 +7,7 @@ enum ClickState {
 }
 
 const hoverStyling: React.CSSProperties = {
-  color: "#808080"
+  color: "#a0a0a0"
 };
 
 const clickStyling: React.CSSProperties = {
