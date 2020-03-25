@@ -2,9 +2,9 @@ import React from "react";
 
 const nameStyle: React.CSSProperties = {
   fontSize: "45px",
-  fontFamily: "Helvetica,Verdana,sans-serif",
   fontWeight: "bold",
-  display: "inline-grid"
+  display: "inline-grid",
+  padding: "0px 10px"
 };
 
 export const Name = React.memo(function Name() {
