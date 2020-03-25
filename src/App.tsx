@@ -1,7 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Page } from "./pages";
+import { Page, ArtPage, CodePage, MePage, LandingPage } from "./pages";
 import { AppBody, AppHeader } from "./view";
+import Routes from "./routes";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -18,15 +20,13 @@ const useStyles = makeStyles({
 
 export const App: React.FC = () => {
   const classes = useStyles();
-  const [selectedPage, setSelectedPage] = React.useState<Page>(Page.LANDING);
 
   return (
-    <div className={classes.root}>
-      <AppHeader
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <AppBody selectedPage={selectedPage} />
-    </div>
+    <Router>
+      <div className={classes.root}>
+        <AppHeader />
+        <AppBody />
+      </div>
+    </Router>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Name, NavOptions } from "./";
 import { Page } from "../pages";
+import { Routes } from "../routes";
 
 const headerStyle: React.CSSProperties = {
   // todo: delete outline
@@ -18,20 +19,33 @@ const wrapperStyle: React.CSSProperties = {
   margin: "0px 10px"
 };
 
-interface AppHeaderProps {
-  selectedPage: Page;
-  setSelectedPage: (page: Page) => void;
-}
+const getSelectedPage = (): Page => {
+  const path = window.location.pathname;
+  switch (path) {
+    case Routes.ArtPage.path:
+      return Page.ART;
+    case Routes.CodePage.path:
+      return Page.CODE;
+    case Routes.MePage.path:
+      return Page.ME;
+    default:
+      return Page.LANDING;
+  }
+};
 
-export const AppHeader: React.FC<AppHeaderProps> = props => {
+export const AppHeader: React.FC = () => {
+  const [selectedPage, setSelectedPage] = React.useState<Page>(
+    getSelectedPage()
+  );
+
   return (
     <div style={headerStyle}>
       <Grid>
         <div style={wrapperStyle}>
           <Name />
           <NavOptions
-            selectedPage={props.selectedPage}
-            setSelectedPage={props.setSelectedPage}
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
           />
         </div>
       </Grid>

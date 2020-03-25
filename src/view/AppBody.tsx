@@ -1,5 +1,7 @@
 import React from "react";
 import { ArtPage, CodePage, LandingPage, MePage, Page } from "../pages";
+import { Route, Switch } from "react-router";
+import { Routes } from "../routes";
 
 const bodyStyle: React.CSSProperties = {
   // todo: delete outline
@@ -7,23 +9,25 @@ const bodyStyle: React.CSSProperties = {
   marginTop: "5px"
 };
 
-interface AppBodyProps {
-  selectedPage: Page;
-}
-
-const getPageComponent = (page: Page) => {
-  switch (page) {
-    case Page.ART:
-      return <ArtPage />;
-    case Page.CODE:
-      return <CodePage />;
-    case Page.ME:
-      return <MePage />;
-    default:
-      return <LandingPage />;
-  }
-};
-
-export const AppBody: React.FC<AppBodyProps> = props => {
-  return <div style={bodyStyle}>{getPageComponent(props.selectedPage)}</div>;
+export const AppBody: React.FC = () => {
+  return (
+    <div style={bodyStyle}>
+      {
+        <Switch>
+          <Route path={Routes.ArtPage.path}>
+            <ArtPage />
+          </Route>
+          <Route path={Routes.CodePage.path}>
+            <CodePage />
+          </Route>
+          <Route path={Routes.MePage.path}>
+            <MePage />
+          </Route>
+          <Route path={Routes.Home.path}>
+            <LandingPage />
+          </Route>
+        </Switch>
+      }
+    </div>
+  );
 };

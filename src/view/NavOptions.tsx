@@ -1,6 +1,8 @@
 import React from "react";
 import { NavOption } from "./";
 import { Page } from "../pages";
+import { Link } from "react-router-dom";
+import { Routes } from "../routes";
 
 const separator = " / ";
 
@@ -16,33 +18,33 @@ interface NavOptionsProps {
 }
 
 export const NavOptions: React.FC<NavOptionsProps> = props => {
-  const { setSelectedPage, selectedPage } = props;
-
-  const onClick = (page: Page) => {
-    return () => {
-      setSelectedPage(page);
-    };
-  };
+  const { selectedPage, setSelectedPage } = props;
 
   return (
     <div style={navOptionsStyle}>
-      <NavOption
-        onClick={onClick(Page.ART)}
-        isSelected={selectedPage === Page.ART}
-        name="art"
-      />
+      <Link to={Routes.ArtPage.path}>
+        <NavOption
+          onClick={() => setSelectedPage(Page.ART)}
+          isSelected={selectedPage === Page.ART}
+          name={Routes.ArtPage.name}
+        />
+      </Link>
       {separator}
-      <NavOption
-        onClick={onClick(Page.CODE)}
-        isSelected={selectedPage === Page.CODE}
-        name="code"
-      />
+      <Link to={Routes.CodePage.path}>
+        <NavOption
+          onClick={() => setSelectedPage(Page.CODE)}
+          isSelected={selectedPage === Page.CODE}
+          name={Routes.CodePage.name}
+        />
+      </Link>
       {separator}
-      <NavOption
-        onClick={onClick(Page.ME)}
-        isSelected={selectedPage === Page.ME}
-        name="me"
-      />
+      <Link to={Routes.MePage.path}>
+        <NavOption
+          onClick={() => setSelectedPage(Page.ME)}
+          isSelected={selectedPage === Page.ME}
+          name={Routes.MePage.name}
+        />
+      </Link>
     </div>
   );
 };
