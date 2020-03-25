@@ -4,7 +4,8 @@ const separator = " // ";
 
 const navOptionsStyle: React.CSSProperties = {
   padding: "0px 5px",
-  display: "inline-block"
+  display: "inline-block",
+  fontSize: "28px"
 };
 
 interface NavOptionsProps {
