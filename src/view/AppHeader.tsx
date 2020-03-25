@@ -1,6 +1,7 @@
 import React from "react";
 
 const headerStyle: React.CSSProperties = {
+  // todo: delete outline
   outline: "solid black 1px",
   width: "910px",
   fontSize: "45px",
