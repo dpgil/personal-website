@@ -11,6 +11,13 @@ const headerStyle: React.CSSProperties = {
   fontFamily: "Helvetica,Verdana,sans-serif"
 };
 
+const wrapperStyle: React.CSSProperties = {
+  display: "inline-block",
+  borderBottom: "solid",
+  padding: "10px 0px",
+  margin: "0px 10px"
+};
+
 interface AppHeaderProps {
   setSelectedPage: (page: Page) => void;
 }
@@ -19,8 +26,10 @@ export const AppHeader: React.FC<AppHeaderProps> = props => {
   return (
     <div style={headerStyle}>
       <Grid>
-        <Name />
-        <NavOptions setSelectedPage={props.setSelectedPage} />
+        <div style={wrapperStyle}>
+          <Name />
+          <NavOptions setSelectedPage={props.setSelectedPage} />
+        </div>
       </Grid>
     </div>
   );
