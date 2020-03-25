@@ -14,7 +14,7 @@ const headerStyle: React.CSSProperties = {
 const wrapperStyle: React.CSSProperties = {
   display: "inline-block",
   borderBottom: "solid",
-  padding: "10px 0px",
+  padding: "5px 0px",
   margin: "0px 10px"
 };
 
