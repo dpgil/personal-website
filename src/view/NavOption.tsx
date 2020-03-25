@@ -6,24 +6,30 @@ enum ClickState {
   CLICK
 }
 
-const getColor = (clickState: ClickState, isSelected: boolean): string => {
-  switch (clickState) {
-    case ClickState.HOVER:
-      return "#808080";
-    case ClickState.CLICK:
-      return "#c0c0c0";
-    default:
-      return isSelected ? "#808080" : "black";
-  }
+const hoverStyling: React.CSSProperties = {
+  color: "#808080"
+};
+
+const clickStyling: React.CSSProperties = {
+  color: "#c0c0c0"
+};
+
+const defaultStyling: React.CSSProperties = {
+  color: "black"
 };
 
 const getNavOptionStyle = (
   clickState: ClickState,
   isSelected: boolean
 ): React.CSSProperties => {
-  return {
-    color: getColor(clickState, isSelected)
-  };
+  switch (clickState) {
+    case ClickState.HOVER:
+      return hoverStyling;
+    case ClickState.CLICK:
+      return clickStyling;
+    default:
+      return isSelected ? hoverStyling : defaultStyling;
+  }
 };
 
 interface NavOptionProps {
@@ -57,8 +63,6 @@ export const NavOption: React.FC<NavOptionProps> = props => {
       props.onClick();
     }
   };
-
-  console.log(props.name + ": " + props.isSelected);
 
   return (
     <span
