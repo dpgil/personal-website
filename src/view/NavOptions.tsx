@@ -5,6 +5,6 @@ const navOptionsStyle: React.CSSProperties = {
   padding: "0px 5px"
 };
 
-export const NavOptions = React.memo(function NavOptions() {
+export const NavOptions: React.FC = () => {
   return <div style={navOptionsStyle}>art // code // me</div>;
-});
+};

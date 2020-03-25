@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   }
 });
 
-export const App = React.memo(function App() {
+export const App: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -24,4 +24,4 @@ export const App = React.memo(function App() {
       <AppBody />
     </div>
   );
-});
+};

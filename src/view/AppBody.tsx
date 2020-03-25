@@ -6,6 +6,6 @@ const bodyStyle: React.CSSProperties = {
   marginTop: "5px"
 };
 
-export const AppBody = React.memo(function AppBody() {
+export const AppBody: React.FC = () => {
   return <div style={bodyStyle}>body</div>;
-});
+};

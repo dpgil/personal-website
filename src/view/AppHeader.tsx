@@ -10,7 +10,7 @@ const headerStyle: React.CSSProperties = {
   fontFamily: "Helvetica,Verdana,sans-serif"
 };
 
-export const AppHeader = React.memo(function AppHeader() {
+export const AppHeader: React.FC = () => {
   return (
     <div style={headerStyle}>
       <Grid>
@@ -19,4 +19,4 @@ export const AppHeader = React.memo(function AppHeader() {
       </Grid>
     </div>
   );
-});
+};

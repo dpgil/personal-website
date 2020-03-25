@@ -7,6 +7,6 @@ const nameStyle: React.CSSProperties = {
   padding: "0px 10px"
 };
 
-export const Name = React.memo(function Name() {
+export const Name: React.FC = () => {
   return <span style={nameStyle}>DANIEL GIL</span>;
-});
+};
