@@ -1,6 +1,5 @@
 import React from "react";
-import { Page } from "./NavOptions";
-import { ArtPage, CodePage, LandingPage, MePage } from "../pages";
+import { ArtPage, CodePage, LandingPage, MePage, Page } from "../pages";
 
 const bodyStyle: React.CSSProperties = {
   // todo: delete outline

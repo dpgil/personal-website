@@ -1,7 +1,7 @@
 import React from "react";
-import { AppBody, AppHeader } from "./view";
 import { makeStyles } from "@material-ui/core/styles";
-import { Page } from "./view/NavOptions";
+import { Page } from "./pages";
+import { AppBody, AppHeader } from "./view";
 
 const useStyles = makeStyles({
   root: {

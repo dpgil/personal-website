@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Name, NavOptions } from "./";
-import { Page } from "./NavOptions";
+import { Page } from "../pages";
 
 const headerStyle: React.CSSProperties = {
   // todo: delete outline

@@ -1,4 +1,6 @@
 import React from "react";
+import { NavOption } from "./";
+import { Page } from "../pages";
 
 const separator = " // ";
 
@@ -10,13 +12,6 @@ const navOptionsStyle: React.CSSProperties = {
 
 interface NavOptionsProps {
   setSelectedPage: (page: Page) => void;
-}
-
-export enum Page {
-  LANDING,
-  ART,
-  CODE,
-  ME
 }
 
 export const NavOptions: React.FC<NavOptionsProps> = props => {
@@ -37,20 +32,4 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
       <NavOption onClick={onClick(Page.ME)} name="me" />
     </div>
   );
-};
-
-interface NavOptionProps {
-  name: string;
-  onClick?: () => void;
-}
-
-// todo: add hover and click styling
-const NavOption: React.FC<NavOptionProps> = props => {
-  const onClick = () => {
-    if (props.onClick) {
-      props.onClick();
-    }
-  };
-
-  return <span onClick={onClick}>{props.name}</span>;
 };
