@@ -1,5 +1,13 @@
 import React from "react";
 
+const headerStyle: React.CSSProperties = {
+  outline: "solid black 1px",
+  width: "910px",
+  fontSize: "45px",
+  fontFamily: "Helvetica,Verdana,sans-serif",
+  fontWeight: "bold"
+};
+
 export const AppHeader = React.memo(function AppHeader() {
-  return <div>header</div>;
+  return <div style={headerStyle}>DANIEL GIL</div>;
 });
