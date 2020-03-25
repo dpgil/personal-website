@@ -22,29 +22,23 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
 
   return (
     <div style={navOptionsStyle}>
-      <Link to={Routes.ArtPage.path}>
-        <NavOption
-          onClick={() => setSelectedPage(Page.ART)}
-          isSelected={selectedPage === Page.ART}
-          name={Routes.ArtPage.name}
-        />
-      </Link>
+      <NavOption
+        onClick={() => setSelectedPage(Page.ART)}
+        isSelected={selectedPage === Page.ART}
+        route={Routes.ArtPage}
+      />
       {separator}
-      <Link to={Routes.CodePage.path}>
-        <NavOption
-          onClick={() => setSelectedPage(Page.CODE)}
-          isSelected={selectedPage === Page.CODE}
-          name={Routes.CodePage.name}
-        />
-      </Link>
+      <NavOption
+        onClick={() => setSelectedPage(Page.CODE)}
+        isSelected={selectedPage === Page.CODE}
+        route={Routes.CodePage}
+      />
       {separator}
-      <Link to={Routes.MePage.path}>
-        <NavOption
-          onClick={() => setSelectedPage(Page.ME)}
-          isSelected={selectedPage === Page.ME}
-          name={Routes.MePage.name}
-        />
-      </Link>
+      <NavOption
+        onClick={() => setSelectedPage(Page.ME)}
+        isSelected={selectedPage === Page.ME}
+        route={Routes.MePage}
+      />
     </div>
   );
 };

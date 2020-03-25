@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 enum ClickState {
   DEFAULT,
@@ -6,15 +7,15 @@ enum ClickState {
   CLICK
 }
 
-const hoverStyling: React.CSSProperties = {
+const hoverStyle: React.CSSProperties = {
   color: "#a0a0a0"
 };
 
-const clickStyling: React.CSSProperties = {
+const clickStyle: React.CSSProperties = {
   color: "#c0c0c0"
 };
 
-const defaultStyling: React.CSSProperties = {
+const defaultStyle: React.CSSProperties = {
   color: "black"
 };
 
@@ -24,16 +25,21 @@ const getNavOptionStyle = (
 ): React.CSSProperties => {
   switch (clickState) {
     case ClickState.HOVER:
-      return hoverStyling;
+      return hoverStyle;
     case ClickState.CLICK:
-      return clickStyling;
+      return clickStyle;
     default:
-      return isSelected ? hoverStyling : defaultStyling;
+      return isSelected ? hoverStyle : defaultStyle;
   }
 };
 
+const linkStyle: React.CSSProperties = {
+  textDecoration: "none",
+  color: "inherit"
+};
+
 interface NavOptionProps {
-  name: string;
+  route: { path: string; name: string };
   isSelected: boolean;
   onClick?: () => void;
 }
@@ -73,7 +79,9 @@ export const NavOption: React.FC<NavOptionProps> = props => {
       onMouseUp={onMouseUp}
       onTouchEnd={() => setClickState(ClickState.DEFAULT)}
     >
-      {props.name}
+      <Link style={linkStyle} to={props.route.path}>
+        {props.route.name}
+      </Link>
     </span>
   );
 };
