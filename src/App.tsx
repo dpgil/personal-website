@@ -22,7 +22,10 @@ export const App: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <AppHeader setSelectedPage={setSelectedPage} />
+      <AppHeader
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
       <AppBody selectedPage={selectedPage} />
     </div>
   );

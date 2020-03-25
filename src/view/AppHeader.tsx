@@ -19,6 +19,7 @@ const wrapperStyle: React.CSSProperties = {
 };
 
 interface AppHeaderProps {
+  selectedPage: Page;
   setSelectedPage: (page: Page) => void;
 }
 
@@ -28,7 +29,10 @@ export const AppHeader: React.FC<AppHeaderProps> = props => {
       <Grid>
         <div style={wrapperStyle}>
           <Name />
-          <NavOptions setSelectedPage={props.setSelectedPage} />
+          <NavOptions
+            selectedPage={props.selectedPage}
+            setSelectedPage={props.setSelectedPage}
+          />
         </div>
       </Grid>
     </div>
