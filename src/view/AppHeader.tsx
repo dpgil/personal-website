@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { Name } from "./";
+import { Name, NavOptions } from "./";
 
 const headerStyle: React.CSSProperties = {
   // todo: delete outline
@@ -13,7 +13,7 @@ export const AppHeader = React.memo(function AppHeader() {
     <div style={headerStyle}>
       <Grid>
         <Name />
-        <Name />
+        <NavOptions />
       </Grid>
     </div>
   );
