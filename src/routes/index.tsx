@@ -1,7 +1,7 @@
 export const Routes = {
   Home: {
     path: "/",
-    name: "home"
+    name: "DANIEL GIL"
   },
   ArtPage: {
     path: "/art",

@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { Name, NavOptions } from "./";
+import { NavOptions } from "./";
 import { Page } from "../pages";
 import { Routes } from "../routes";
 
@@ -42,7 +42,6 @@ export const AppHeader: React.FC = () => {
     <div style={headerStyle}>
       <Grid>
         <div style={wrapperStyle}>
-          <Name />
           <NavOptions
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
