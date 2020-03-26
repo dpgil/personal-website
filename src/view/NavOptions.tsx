@@ -6,7 +6,7 @@ import { Routes } from "../routes";
 const separator = " / ";
 
 const navOptionsStyle: React.CSSProperties = {
-  padding: "0px 5px",
+  padding: "0px 10px",
   display: "inline-block",
   fontSize: "28px"
 };
