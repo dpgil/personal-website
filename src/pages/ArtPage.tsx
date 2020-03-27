@@ -14,10 +14,16 @@ export const ArtPage: React.FC = () => {
   );
 };
 
-const imageBlockStyle: React.CSSProperties = {
-  maxWidth: "400px",
-  display: "inline-block",
-  padding: "5px"
+const getImageBlockStyle = (hover: boolean): React.CSSProperties => {
+  return {
+    display: "inline-block",
+    padding: "5px",
+    opacity: hover ? 0.3 : 1
+  };
+};
+
+const imageStyle: React.CSSProperties = {
+  maxWidth: "400px"
 };
 
 interface ImageBlockProps {
@@ -25,5 +31,24 @@ interface ImageBlockProps {
 }
 
 const ImageBlock: React.FC<ImageBlockProps> = props => {
-  return <img style={imageBlockStyle} src={props.src} />;
+  const [hover, setHover] = React.useState<boolean>(false);
+
+  const onMouseEnter = () => {
+    setHover(true);
+  };
+
+  const onMouseLeave = () => {
+    setHover(false);
+  };
+
+  return (
+    <div style={getImageBlockStyle(hover)}>
+      <img
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={imageStyle}
+        src={props.src}
+      />
+    </div>
+  );
 };
