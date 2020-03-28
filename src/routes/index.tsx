@@ -11,6 +11,10 @@ export const Routes = {
     path: "/code",
     name: "code"
   },
+  MusicPage: {
+    path: "/music",
+    name: "music"
+  },
   MePage: {
     path: "/me",
     name: "me"

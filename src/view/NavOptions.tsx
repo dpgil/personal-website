@@ -49,6 +49,12 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         />
         {separator}
         <NavOption
+          onClick={() => setSelectedPage(Page.MUSIC)}
+          isSelected={selectedPage === Page.MUSIC}
+          route={Routes.MusicPage}
+        />
+        {separator}
+        <NavOption
           onClick={() => setSelectedPage(Page.ME)}
           isSelected={selectedPage === Page.ME}
           route={Routes.MePage}

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArtPage, CodePage, LandingPage, MePage } from "../pages";
+import { ArtPage, CodePage, LandingPage, MePage, MusicPage } from "../pages";
 import { Route, Switch } from "react-router";
 import { Routes } from "../routes";
 
@@ -20,6 +20,9 @@ export const AppBody: React.FC = () => {
           </Route>
           <Route path={Routes.MePage.path}>
             <MePage />
+          </Route>
+          <Route path={Routes.MusicPage.path}>
+            <MusicPage />
           </Route>
           <Route path={Routes.Home.path}>
             <LandingPage />

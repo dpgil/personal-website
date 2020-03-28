@@ -2,5 +2,6 @@ export enum Page {
   LANDING,
   ART,
   CODE,
-  ME
+  ME,
+  MUSIC
 }
