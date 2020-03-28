@@ -1,20 +1,18 @@
-const publicUrl = process.env.PUBLIC_URL;
-
 export const Routes = {
   Home: {
-    path: `${publicUrl}/`,
+    path: "/",
     name: "DANIEL GIL"
   },
   ArtPage: {
-    path: `${publicUrl}/art`,
+    path: "/art",
     name: "art"
   },
   CodePage: {
-    path: `${publicUrl}/code`,
+    path: "/code",
     name: "code"
   },
   MePage: {
-    path: `${publicUrl}/me`,
+    path: "/me",
     name: "me"
   }
 };
