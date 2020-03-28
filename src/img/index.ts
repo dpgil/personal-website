@@ -16,24 +16,24 @@ import owl from "./owl_square.jpg";
 import peacock from "./peacock_square.jpg";
 import skull from "./skull_square.jpg";
 
-const images = [
-  ava,
-  chimpanzee,
-  cockatoo,
-  crow,
-  femaleBody,
-  femalePortrait,
-  flower,
-  frog,
-  hand,
-  jellyfish,
-  mask,
-  mushroom,
-  mushrooms,
-  orange,
-  owl,
-  peacock,
-  skull
-];
+export type Image = { name: string; src: string };
 
-export { images };
+export const images: Image[] = [
+  { name: "Ava", src: ava },
+  { name: "Chimpanzee", src: chimpanzee },
+  { name: "Cockatoo", src: cockatoo },
+  { name: "Crow", src: crow },
+  { name: "Body", src: femaleBody },
+  { name: "Gaze", src: femalePortrait },
+  { name: "Flower", src: flower },
+  { name: "Frog", src: frog },
+  { name: "Hand", src: hand },
+  { name: "Jellyfish", src: jellyfish },
+  { name: "Mask", src: mask },
+  { name: "Mushroom", src: mushroom },
+  { name: "Fungi", src: mushrooms },
+  { name: "Orange", src: orange },
+  { name: "Owl", src: owl },
+  { name: "Peacock", src: peacock },
+  { name: "Skull", src: skull }
+];
