@@ -1,6 +1,6 @@
 import React from "react";
 
-const imageBlockWidth = "400px";
+const imageBlockWidth = 360;
 
 export const imageBlockStyle: React.CSSProperties = {
   display: "inline-block",
