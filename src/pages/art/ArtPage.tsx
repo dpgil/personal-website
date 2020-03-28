@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { ImageBlock } from "./ImageBlock";
-import { images } from "../img";
+import { images } from "../../img";
 
 export const ArtPage: React.FC = () => {
   return (
