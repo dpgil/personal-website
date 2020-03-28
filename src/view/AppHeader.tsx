@@ -5,8 +5,6 @@ import { Page } from "../pages";
 import { Routes } from "../routes";
 
 const headerStyle: React.CSSProperties = {
-  // todo: delete outline
-  outline: "solid black 1px",
   padding: "10px 0px",
   marginBottom: "2px",
   fontFamily: "Helvetica,Verdana,sans-serif"

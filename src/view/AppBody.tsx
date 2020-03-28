@@ -4,8 +4,6 @@ import { Route, Switch } from "react-router";
 import { Routes } from "../routes";
 
 const bodyStyle: React.CSSProperties = {
-  // todo: delete outline
-  outline: "solid 1px blue",
   marginTop: "5px"
 };
 
