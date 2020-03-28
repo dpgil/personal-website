@@ -16,24 +16,24 @@ import owl from "./owl_square.jpg";
 import peacock from "./peacock_square.jpg";
 import skull from "./skull_square.jpg";
 
-export type Image = { name: string; src: string };
+export type Image = { name: string; src: string; year: number };
 
 export const images: Image[] = [
-  { name: "Ava", src: ava },
-  { name: "Chimpanzee", src: chimpanzee },
-  { name: "Cockatoo", src: cockatoo },
-  { name: "Crow", src: crow },
-  { name: "Body", src: femaleBody },
-  { name: "Gaze", src: femalePortrait },
-  { name: "Flower", src: flower },
-  { name: "Frog", src: frog },
-  { name: "Hand", src: hand },
-  { name: "Jellyfish", src: jellyfish },
-  { name: "Mask", src: mask },
-  { name: "Mushroom", src: mushroom },
-  { name: "Fungi", src: mushrooms },
-  { name: "Orange", src: orange },
-  { name: "Owl", src: owl },
-  { name: "Peacock", src: peacock },
-  { name: "Skull", src: skull }
+  { name: "Ava", src: ava, year: 2019 },
+  { name: "Chimpanzee", src: chimpanzee, year: 2018 },
+  { name: "Cockatoo", src: cockatoo, year: 2019 },
+  { name: "Crow", src: crow, year: 2018 },
+  { name: "Body", src: femaleBody, year: 2019 },
+  { name: "Gaze", src: femalePortrait, year: 2018 },
+  { name: "Flower", src: flower, year: 2019 },
+  { name: "Frog", src: frog, year: 2019 },
+  { name: "Hand", src: hand, year: 2018 },
+  { name: "Jellyfish", src: jellyfish, year: 2018 },
+  { name: "Mask", src: mask, year: 2019 },
+  { name: "Mushroom", src: mushroom, year: 2019 },
+  { name: "Fungi", src: mushrooms, year: 2019 },
+  { name: "Orange", src: orange, year: 2019 },
+  { name: "Owl", src: owl, year: 2018 },
+  { name: "Peacock", src: peacock, year: 2019 },
+  { name: "Skull", src: skull, year: 2019 }
 ];
