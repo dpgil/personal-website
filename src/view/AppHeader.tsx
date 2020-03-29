@@ -6,8 +6,7 @@ import { Routes } from "../routes";
 
 const headerStyle: React.CSSProperties = {
   padding: "10px 0px",
-  marginBottom: "2px",
-  fontFamily: "Helvetica,Verdana,sans-serif"
+  marginBottom: "2px"
 };
 
 const wrapperStyle: React.CSSProperties = {

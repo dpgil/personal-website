@@ -12,7 +12,9 @@ const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
     fontSize: "calc(10px + 2vmin)",
-    color: "black"
+    color: "black",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
   }
 });
 
