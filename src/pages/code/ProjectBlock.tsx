@@ -20,11 +20,9 @@ export const ProjectBlock: React.FC<ProjectBlockProps> = props => {
     <div style={wrapperStyle}>
       <ProjectSeparator />
       <div style={bodyStyle}>
-        {imageLeft && <ProjectImage src={project.imgSrc} alt={project.title} />}
+        {imageLeft && <ProjectImage project={project} />}
         <ProjectInfo project={project} />
-        {!imageLeft && (
-          <ProjectImage src={project.imgSrc} alt={project.title} />
-        )}
+        {!imageLeft && <ProjectImage project={project} />}
       </div>
     </div>
   );
@@ -40,10 +38,18 @@ const ProjectInfo: React.FC<{ project: Project }> = props => {
   return <div style={projectInfoStyle}>{project.title}</div>;
 };
 
-const ProjectImage: React.FC<{ alt: string; src: string }> = props => {
+const ProjectImage: React.FC<{ project: Project }> = props => {
+  const { project } = props;
+
   return (
     <div style={projectImageWrapperStyle}>
-      <img alt={props.alt} style={projectImageStyle} src={props.src}></img>
+      <a href={project.link} target="_blank" rel="noopener noreferrer">
+        <img
+          alt={project.title}
+          style={projectImageStyle}
+          src={project.imgSrc}
+        ></img>
+      </a>
     </div>
   );
 };
