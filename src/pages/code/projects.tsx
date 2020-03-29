@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  pathlinker,
   pente,
   personalWebsite,
   truthFiddle,
@@ -51,5 +52,12 @@ export const projects: Project[] = [
     link: "https://pente-online.herokuapp.com",
     github: "https://github.com/dpgil/pente",
     imgSrc: pente
+  },
+  {
+    title: "PathLinker",
+    description: <span>pathlinker</span>,
+    link: "https://apps.cytoscape.org/apps/pathlinker",
+    github: "https://github.com/Murali-group/PathLinker-Cytoscape",
+    imgSrc: pathlinker
   }
 ];

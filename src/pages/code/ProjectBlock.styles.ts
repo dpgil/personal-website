@@ -25,7 +25,8 @@ export const blockColumnStyle: React.CSSProperties = {
 };
 
 export const projectImageStyle: React.CSSProperties = {
-  width: "100%"
+  width: "100%",
+  borderRadius: 10
 };
 
 export const bodyStyle: React.CSSProperties = {
