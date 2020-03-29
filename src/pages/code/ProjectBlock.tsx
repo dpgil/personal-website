@@ -11,21 +11,27 @@ import {
 
 interface ProjectBlockProps {
   project: Project;
-  left: boolean;
+  imageLeft: boolean;
 }
 
 export const ProjectBlock: React.FC<ProjectBlockProps> = props => {
-  const { project, left } = props;
+  const { project, imageLeft } = props;
   return (
     <div style={wrapperStyle}>
-      <div style={separatorStyle}></div>
+      <ProjectSeparator />
       <div style={bodyStyle}>
-        {left && <ProjectImage src={project.imgSrc} alt={project.title} />}
+        {imageLeft && <ProjectImage src={project.imgSrc} alt={project.title} />}
         <ProjectInfo project={project} />
-        {!left && <ProjectImage src={project.imgSrc} alt={project.title} />}
+        {!imageLeft && (
+          <ProjectImage src={project.imgSrc} alt={project.title} />
+        )}
       </div>
     </div>
   );
+};
+
+const ProjectSeparator: React.FC = () => {
+  return <div style={separatorStyle}></div>;
 };
 
 const ProjectInfo: React.FC<{ project: Project }> = props => {
