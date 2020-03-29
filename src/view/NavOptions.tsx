@@ -69,8 +69,8 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => setSelectedPage(Page.ME)}
-          isSelected={selectedPage === Page.ME}
+          onClick={() => setSelectedPage(Page.CONTACT)}
+          isSelected={selectedPage === Page.CONTACT}
           route={Routes.ContactPage}
         >
           <MailOutlineIcon style={mailIconStyle} />

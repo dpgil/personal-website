@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import { NavOptions } from "./";
 import { Page } from "../pages";
@@ -18,14 +18,16 @@ const wrapperStyle: React.CSSProperties = {
 };
 
 const getSelectedPage = (): Page => {
-  const path = window.location.pathname;
+  const path = window.location.hash;
   switch (path) {
-    case Routes.ArtPage.path:
+    case `#${Routes.ArtPage.path}`:
       return Page.ART;
-    case Routes.CodePage.path:
+    case `#${Routes.CodePage.path}`:
       return Page.CODE;
-    case Routes.ContactPage.path:
-      return Page.ME;
+    case `#${Routes.ContactPage.path}`:
+      return Page.CONTACT;
+    case `#${Routes.MusicPage.path}`:
+      return Page.MUSIC;
     default:
       return Page.LANDING;
   }
