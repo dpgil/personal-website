@@ -13,8 +13,8 @@ export const CodePage: React.FC = () => {
   return (
     <div style={pageStyle}>
       <Description />
-      {projects.map(p => (
-        <ProjectBlock project={p} />
+      {projects.map((p, i) => (
+        <ProjectBlock project={p} left={i % 2 === 0} />
       ))}
     </div>
   );
@@ -34,7 +34,8 @@ const Description: React.FC = () => {
         on front end work in react/typescript.
       </div>
       <div style={descriptionStyle}>
-        previously i worked at microsoft in redmond, wa on office online and the{" "}
+        previously i was at microsoft in redmond, wa working on office online
+        and the{" "}
         <TextLink
           text="fluid framework"
           link="https://www.pcmag.com/news/what-is-microsofts-fluid-framework"
@@ -42,7 +43,8 @@ const Description: React.FC = () => {
         .
       </div>
       <div style={descriptionStyle}>
-        i also write code for fun. here are some projects that i've worked on:
+        i also write code for fun. here are some projects that i've worked on in
+        my free time:
       </div>
     </>
   );
