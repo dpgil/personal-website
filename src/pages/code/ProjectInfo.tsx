@@ -1,5 +1,6 @@
 import React from "react";
 import { Project } from "./projects";
+import { TextLink } from "./TextLink";
 
 const wrapperStyle: React.CSSProperties = {
   height: "100%"
@@ -7,7 +8,8 @@ const wrapperStyle: React.CSSProperties = {
 
 const titleStyle: React.CSSProperties = {
   fontWeight: "bold",
-  paddingBottom: 10
+  paddingBottom: 15,
+  fontSize: 35
 };
 
 const descriptionStyle: React.CSSProperties = {
@@ -20,7 +22,12 @@ export const ProjectInfo: React.FC<{ project: Project }> = props => {
   return (
     <div style={wrapperStyle}>
       <div style={titleStyle}>{project.title}</div>
-      <div style={descriptionStyle}>{project.description}</div>
+      <div style={descriptionStyle}>
+        {project.description}
+        <div style={{ paddingTop: 10 }}>
+          <TextLink text="github" link={project.github} />
+        </div>
+      </div>
     </div>
   );
 };
