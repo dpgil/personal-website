@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { Link } from "react-router-dom";
 
 enum ClickState {
@@ -42,6 +42,7 @@ interface NavOptionProps {
   route: { path: string; name: string };
   isSelected: boolean;
   onClick?: () => void;
+  children?: JSX.Element;
 }
 
 // todo: add hover and click styling
@@ -80,7 +81,8 @@ export const NavOption: React.FC<NavOptionProps> = props => {
       onTouchEnd={() => setClickState(ClickState.DEFAULT)}
     >
       <Link style={linkStyle} to={props.route.path}>
-        {props.route.name}
+        {props.children}
+        {/* {props.route.name} */}
       </Link>
     </span>
   );
