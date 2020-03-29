@@ -1,4 +1,6 @@
 import React from "react";
+import { projects } from "../../media/projects";
+import { ProjectBlock } from "./ProjectBlock";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
@@ -11,6 +13,9 @@ export const CodePage: React.FC = () => {
   return (
     <div style={pageStyle}>
       <Description />
+      {projects.map(p => (
+        <ProjectBlock project={p} />
+      ))}
     </div>
   );
 };
@@ -25,7 +30,7 @@ const Description: React.FC = () => {
     <>
       <div style={descriptionStyle}>
         for money, i write code. i currently work in observability for lyft in
-        nyc. maybe 80% of my time is spent building systems in golang, the rest
+        nyc. around 80% of my time is spent building systems in golang, the rest
         on front end work in react/typescript.
       </div>
       <div style={descriptionStyle}>
