@@ -16,7 +16,7 @@ const separatorStyle: React.CSSProperties = {
   maxWidth: 120,
   margin: "auto",
   marginTop: 30,
-  marginBottom: 30
+  marginBottom: 20
 };
 
 const playerStyle: React.CSSProperties = {
