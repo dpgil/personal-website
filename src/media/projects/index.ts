@@ -1,11 +1,12 @@
 import truthFiddle from "./truth-fiddle.png";
+import typeMaster from "./type-master.png";
 
 export type Project = {
   title: string;
   description: string;
   link: string;
   github: string;
-  src: string;
+  imgSrc: string;
 };
 
 export const projects: Project[] = [
@@ -14,6 +15,13 @@ export const projects: Project[] = [
     description: "Made with my buddy joe",
     link: "https://truthfiddle.com",
     github: "https://github.com/avadavat/truth-fiddle",
-    src: truthFiddle
+    imgSrc: truthFiddle
+  },
+  {
+    title: "Type Master",
+    description: "Minimialist's whack-a-mole",
+    link: "https://type-master.herokuapp.com",
+    github: "https://github.com/dpgil/type-master",
+    imgSrc: typeMaster
   }
 ];
