@@ -12,13 +12,21 @@ export const separatorStyle: React.CSSProperties = {
   marginBottom: 20
 };
 
+const minBlockWidth = 360;
+const maxBlockWidth = 500;
+
 export const projectInfoStyle: React.CSSProperties = {
-  display: "inline-block"
+  display: "inline-block",
+  minWidth: minBlockWidth,
+  maxWidth: maxBlockWidth,
+  width: "50%"
 };
 
 export const projectImageWrapperStyle: React.CSSProperties = {
   display: "inline-block",
-  maxWidth: 500
+  minWidth: minBlockWidth,
+  maxWidth: maxBlockWidth,
+  width: "50%"
 };
 
 export const projectImageStyle: React.CSSProperties = {
@@ -26,5 +34,5 @@ export const projectImageStyle: React.CSSProperties = {
 };
 
 export const bodyStyle: React.CSSProperties = {
-  display: "inline-block"
+  width: "100%"
 };
