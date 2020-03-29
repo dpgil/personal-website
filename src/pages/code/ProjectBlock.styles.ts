@@ -17,11 +17,12 @@ export const projectInfoStyle: React.CSSProperties = {
 };
 
 export const projectImageWrapperStyle: React.CSSProperties = {
-  display: "inline-block"
+  display: "inline-block",
+  maxWidth: 500
 };
 
 export const projectImageStyle: React.CSSProperties = {
-  width: 360
+  width: "100%"
 };
 
 export const bodyStyle: React.CSSProperties = {
