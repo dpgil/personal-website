@@ -14,7 +14,6 @@ import mushrooms from "./mushrooms_square.jpg";
 import orange from "./orange_square.jpg";
 import owl from "./owl_square.jpg";
 import peacock from "./peacock_square.jpg";
-import skull from "./skull_square.jpg";
 
 export type Image = { name: string; src: string; year: number };
 
@@ -34,6 +33,5 @@ export const images: Image[] = [
   { name: "Fungi", src: mushrooms, year: 2019 },
   { name: "Orange", src: orange, year: 2019 },
   { name: "Owl", src: owl, year: 2018 },
-  { name: "Peacock", src: peacock, year: 2019 },
-  { name: "Skull", src: skull, year: 2019 }
+  { name: "Peacock", src: peacock, year: 2019 }
 ];
