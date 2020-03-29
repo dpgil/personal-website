@@ -19,7 +19,9 @@ export const blockColumnStyle: React.CSSProperties = {
   display: "inline-block",
   minWidth: minBlockWidth,
   maxWidth: maxBlockWidth,
-  width: "50%"
+  width: "50%",
+  padding: 10,
+  verticalAlign: "middle"
 };
 
 export const projectImageStyle: React.CSSProperties = {
