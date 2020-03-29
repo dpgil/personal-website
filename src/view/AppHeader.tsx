@@ -24,7 +24,7 @@ const getSelectedPage = (): Page => {
       return Page.ART;
     case Routes.CodePage.path:
       return Page.CODE;
-    case Routes.MePage.path:
+    case Routes.ContactPage.path:
       return Page.ME;
     default:
       return Page.LANDING;

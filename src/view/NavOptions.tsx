@@ -21,7 +21,7 @@ const navOptionsStyle: React.CSSProperties = {
 
 const mailIconStyle: React.CSSProperties = {
   verticalAlign: "middle",
-  paddingBottom: 2
+  paddingBottom: 1
 };
 
 interface NavOptionsProps {
@@ -71,7 +71,7 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         <NavOption
           onClick={() => setSelectedPage(Page.ME)}
           isSelected={selectedPage === Page.ME}
-          route={Routes.MePage}
+          route={Routes.ContactPage}
         >
           <MailOutlineIcon style={mailIconStyle} />
         </NavOption>

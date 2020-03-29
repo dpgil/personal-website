@@ -11,12 +11,12 @@ export const Routes = {
     path: "/code",
     name: "code"
   },
+  ContactPage: {
+    path: "/contact",
+    name: "contact"
+  },
   MusicPage: {
     path: "/music",
     name: "music"
-  },
-  MePage: {
-    path: "/me",
-    name: "me"
   }
 };

@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 enum ClickState {
@@ -45,7 +45,6 @@ interface NavOptionProps {
   children?: JSX.Element;
 }
 
-// todo: add hover and click styling
 export const NavOption: React.FC<NavOptionProps> = props => {
   const [clickState, setClickState] = React.useState<ClickState>(
     ClickState.DEFAULT
@@ -82,7 +81,6 @@ export const NavOption: React.FC<NavOptionProps> = props => {
     >
       <Link style={linkStyle} to={props.route.path}>
         {props.children}
-        {/* {props.route.name} */}
       </Link>
     </span>
   );
