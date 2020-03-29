@@ -1,5 +1,5 @@
 import React from "react";
-import { projects } from "../../media/projects";
+import { projects } from "./projects";
 import { ProjectBlock } from "./ProjectBlock";
 
 const pageStyle: React.CSSProperties = {
@@ -51,7 +51,7 @@ const Description: React.FC = () => {
   );
 };
 
-const TextLink: React.FC<{ text: string; link: string }> = props => {
+export const TextLink: React.FC<{ text: string; link: string }> = props => {
   return (
     <a
       href={props.link}

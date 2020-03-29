@@ -1,5 +1,5 @@
 import React from "react";
-import { Project } from "../../media/projects";
+import { Project } from "./projects";
 import {
   bodyStyle,
   projectImageStyle,
