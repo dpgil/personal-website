@@ -15,14 +15,7 @@ export const separatorStyle: React.CSSProperties = {
 const minBlockWidth = 360;
 const maxBlockWidth = 500;
 
-export const projectInfoStyle: React.CSSProperties = {
-  display: "inline-block",
-  minWidth: minBlockWidth,
-  maxWidth: maxBlockWidth,
-  width: "50%"
-};
-
-export const projectImageWrapperStyle: React.CSSProperties = {
+export const blockColumnStyle: React.CSSProperties = {
   display: "inline-block",
   minWidth: minBlockWidth,
   maxWidth: maxBlockWidth,

@@ -1,6 +1,7 @@
 import React from "react";
 import { projects } from "./projects";
 import { ProjectBlock } from "./ProjectBlock";
+import { TextLink } from "./TextLink";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
@@ -48,18 +49,5 @@ const Description: React.FC = () => {
         my free time:
       </div>
     </>
-  );
-};
-
-export const TextLink: React.FC<{ text: string; link: string }> = props => {
-  return (
-    <a
-      href={props.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ color: "inherit" }}
-    >
-      {props.text}
-    </a>
   );
 };
