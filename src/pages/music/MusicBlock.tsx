@@ -3,9 +3,6 @@ import { MusicPlayer } from "./MusicPlayer";
 import { Song } from "../../noise";
 
 const wrapperStyle: React.CSSProperties = {
-  width: "90%",
-  maxWidth: "700px",
-  margin: "auto",
   paddingBottom: 25
 };
 
