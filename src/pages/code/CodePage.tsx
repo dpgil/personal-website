@@ -4,7 +4,6 @@ import { ProjectBlock } from "./ProjectBlock";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
-  maxWidth: "700px",
   margin: "auto",
   paddingBottom: 20
 };
@@ -21,8 +20,10 @@ export const CodePage: React.FC = () => {
 };
 
 const descriptionStyle: React.CSSProperties = {
+  maxWidth: "700px",
   textAlign: "left",
-  paddingBottom: 20
+  paddingBottom: 20,
+  margin: "auto"
 };
 
 const Description: React.FC = () => {
