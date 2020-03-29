@@ -35,8 +35,8 @@ const Description: React.FC = () => {
         on front end work in react/typescript.
       </div>
       <div style={descriptionStyle}>
-        previously i was at microsoft in redmond, wa working on office online
-        and the{" "}
+        previously i was in seattle working at microsoft on office online and
+        the{" "}
         <TextLink
           text="fluid framework"
           link="https://www.pcmag.com/news/what-is-microsofts-fluid-framework"
