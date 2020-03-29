@@ -20,8 +20,8 @@ export const MusicPage = () => {
       <div style={descriptionStyle}>
         sometimes my computer makes noises. these are not polished but i think
         it's better that people can listen to them rather than letting them
-        slowly die on my hard drive. most of these songs were co-produced with
-        my friend vanessa
+        slowly die on my hard drive. the samples titled comfortable and maybe
+        let were made with my friend vanessa
       </div>
       {songs.map(s => (
         <MusicBlock key={s.name} song={s} />
