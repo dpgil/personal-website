@@ -1,6 +1,6 @@
 import React from "react";
 import { MusicPlayer } from "./MusicPlayer";
-import { Song } from "../../noise";
+import { Song } from "../../media/noise";
 
 const wrapperStyle: React.CSSProperties = {
   paddingBottom: 10
