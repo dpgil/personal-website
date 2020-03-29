@@ -24,9 +24,12 @@ export const blockColumnStyle: React.CSSProperties = {
   verticalAlign: "middle"
 };
 
-export const projectImageStyle: React.CSSProperties = {
-  width: "100%",
-  borderRadius: 10
+export const getProjectImageStyle = (hover: boolean): React.CSSProperties => {
+  return {
+    width: "100%",
+    borderRadius: 10,
+    opacity: hover ? 0.7 : 1
+  };
 };
 
 export const bodyStyle: React.CSSProperties = {

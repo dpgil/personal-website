@@ -1,6 +1,7 @@
 import React from "react";
 import { Project } from "./projects";
 import { TextLink } from "./TextLink";
+import { blockColumnStyle } from "./ProjectBlock.styles";
 
 const wrapperStyle: React.CSSProperties = {
   height: "100%"
@@ -20,12 +21,14 @@ export const ProjectInfo: React.FC<{ project: Project }> = props => {
   const { project } = props;
 
   return (
-    <div style={wrapperStyle}>
-      <div style={titleStyle}>{project.title}</div>
-      <div style={descriptionStyle}>
-        {project.description}
-        <div style={{ paddingTop: 10 }}>
-          <TextLink text="github" link={project.github} />
+    <div style={blockColumnStyle}>
+      <div style={wrapperStyle}>
+        <div style={titleStyle}>{project.title}</div>
+        <div style={descriptionStyle}>
+          {project.description}
+          <div style={{ paddingTop: 10 }}>
+            <TextLink text="github" link={project.github} />
+          </div>
         </div>
       </div>
     </div>
