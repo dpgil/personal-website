@@ -7,14 +7,22 @@ const pageStyle: React.CSSProperties = {
   paddingBottom: 20
 };
 
+export const CodePage: React.FC = () => {
+  return (
+    <div style={pageStyle}>
+      <Description />
+    </div>
+  );
+};
+
 const descriptionStyle: React.CSSProperties = {
   textAlign: "left",
   paddingBottom: 20
 };
 
-export const CodePage: React.FC = () => {
+const Description: React.FC = () => {
   return (
-    <div style={pageStyle}>
+    <>
       <div style={descriptionStyle}>
         for money, i write code. i currently work in observability for lyft in
         nyc. maybe 80% of my time is spent building systems in golang, the rest
@@ -31,7 +39,7 @@ export const CodePage: React.FC = () => {
       <div style={descriptionStyle}>
         i also write code for fun. here are some projects that i've worked on:
       </div>
-    </div>
+    </>
   );
 };
 

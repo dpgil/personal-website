@@ -9,23 +9,29 @@ const pageStyle: React.CSSProperties = {
   paddingBottom: 20
 };
 
+export const MusicPage = () => {
+  return (
+    <div style={pageStyle}>
+      <Description />
+      {songs.map(s => (
+        <MusicBlock key={s.name} song={s} />
+      ))}
+    </div>
+  );
+};
+
 const descriptionStyle: React.CSSProperties = {
   textAlign: "left",
   paddingBottom: 10
 };
 
-export const MusicPage = () => {
+const Description: React.FC = () => {
   return (
-    <div style={pageStyle}>
-      <div style={descriptionStyle}>
-        sometimes my computer makes noises. these are not polished but i think
-        it's better that people can listen to them rather than letting them
-        slowly die on my hard drive. the samples titled <u>comfortable</u> and{" "}
-        <u>maybe let</u> were made with my friend vanessa
-      </div>
-      {songs.map(s => (
-        <MusicBlock key={s.name} song={s} />
-      ))}
+    <div style={descriptionStyle}>
+      sometimes my computer makes noises. these are not polished but i think
+      it's better that people can listen to them rather than letting them slowly
+      die on my hard drive. the samples titled <u>comfortable</u> and{" "}
+      <u>maybe let</u> were made with my friend vanessa
     </div>
   );
 };
