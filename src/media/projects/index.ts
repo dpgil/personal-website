@@ -1,4 +1,5 @@
 import pente from "./pente.png";
+import personalWebsite from "./personal-website.png";
 import truthFiddle from "./truth-fiddle.png";
 import typeMaster from "./type-master.png";
 
@@ -17,6 +18,13 @@ export const projects: Project[] = [
     link: "https://truthfiddle.com",
     github: "https://github.com/avadavat/truth-fiddle",
     imgSrc: truthFiddle
+  },
+  {
+    title: "Personal Website",
+    description: "I built dis from scratch with react",
+    link: "https://dpgil.github.io",
+    github: "https://github.com/dpgil/personal-website",
+    imgSrc: personalWebsite
   },
   {
     title: "Type Master",
