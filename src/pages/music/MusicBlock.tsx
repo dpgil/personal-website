@@ -3,7 +3,7 @@ import { MusicPlayer } from "./MusicPlayer";
 import { Song } from "../../noise";
 
 const wrapperStyle: React.CSSProperties = {
-  paddingBottom: 25
+  paddingBottom: 10
 };
 
 const titleStyle: React.CSSProperties = {
