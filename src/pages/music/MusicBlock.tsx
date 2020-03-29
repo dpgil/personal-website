@@ -7,7 +7,16 @@ const wrapperStyle: React.CSSProperties = {
 };
 
 const titleStyle: React.CSSProperties = {
-  textAlign: "left"
+  textAlign: "left",
+  paddingBottom: 5
+};
+
+const separatorStyle: React.CSSProperties = {
+  borderTop: "dotted black 2px",
+  maxWidth: 120,
+  margin: "auto",
+  marginTop: 30,
+  marginBottom: 30
 };
 
 const playerStyle: React.CSSProperties = {
@@ -24,6 +33,7 @@ export const MusicBlock: React.FC<MusicBlockProps> = props => {
 
   return (
     <div style={wrapperStyle}>
+      <div style={separatorStyle}></div>
       <div style={titleStyle}>{song.name}</div>
       <MusicPlayer style={playerStyle} src={song.src} />
     </div>
