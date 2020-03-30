@@ -55,11 +55,5 @@ const Tile: React.FC = () => {
     setRotate(r => r + 45);
   };
 
-  return (
-    <div
-      className="gameTile"
-      onClick={onClick}
-      style={getTileStyle(rotate)}
-    ></div>
-  );
+  return <div onClick={onClick} style={getTileStyle(rotate)}></div>;
 };
