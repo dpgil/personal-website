@@ -30,6 +30,5 @@ interface OysterLetterProps {
 
 const OysterLetter: React.FC<OysterLetterProps> = props => {
   const { c, i, oysterState } = props;
-
-  return <span style={getLetterStyle(!!(oysterState & (2 << i)))}>{c}</span>;
+  return <span style={getLetterStyle(!!(oysterState & (1 << i)))}>{c}</span>;
 };
