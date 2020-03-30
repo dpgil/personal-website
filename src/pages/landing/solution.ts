@@ -51,11 +51,11 @@ export const oysterStateFromBoardState = (
   boardState: BoardState,
   key: number[]
 ): OysterState => {
-  const oysterState = [false, false, false, false, false, false];
+  let oysterState = 0x0;
 
   key.forEach((k, i) => {
     if (boardState[k]) {
-      oysterState[i] = true;
+      oysterState |= 2 << i;
     }
   });
 
@@ -66,6 +66,8 @@ export const generateKey = (
   possibilities: number,
   solutionSize: number
 ): number[] => {
+  return [0, 1, 2, 3, 4, 5];
+
   // Always have the o as the top left
   let keys: number[] = [0];
   let possibleKeys: number[] = [];

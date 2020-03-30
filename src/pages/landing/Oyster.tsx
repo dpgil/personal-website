@@ -1,6 +1,6 @@
 import React from "react";
 
-export type OysterState = boolean[];
+export type OysterState = number;
 
 export const Oyster: React.FC<{ oysterState: OysterState }> = props => {
   const { oysterState } = props;
@@ -31,9 +31,5 @@ interface OysterLetterProps {
 const OysterLetter: React.FC<OysterLetterProps> = props => {
   const { c, i, oysterState } = props;
 
-  return (
-    <span style={getLetterStyle(oysterState.length > i && oysterState[i])}>
-      {c}
-    </span>
-  );
+  return <span style={getLetterStyle(!!(oysterState & (2 << i)))}>{c}</span>;
 };

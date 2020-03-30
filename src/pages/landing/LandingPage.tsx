@@ -12,14 +12,7 @@ const pageStyle: React.CSSProperties = {
 };
 
 export const LandingPage: React.FC = () => {
-  const [oysterState, setOysterState] = React.useState<OysterState>([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-  ]);
+  const [oysterState, setOysterState] = React.useState<OysterState>(0x0);
 
   return (
     <div style={pageStyle}>
