@@ -55,7 +55,19 @@ export const projects: Project[] = [
   },
   {
     title: "PathLinker",
-    description: <span>pathlinker</span>,
+    description: (
+      <span>
+        back in college i built a CytoScape application that implements the{" "}
+        <TextLink
+          text="PathLinker"
+          link="https://www.nature.com/articles/npjsba20162"
+        />{" "}
+        algorithm. it's used to reconstruct interactions in signaling pathways
+        in protein-protein interaction networks in cells. check out the paper{" "}
+        <TextLink text="here" link="https://f1000research.com/articles/6-58" />.
+        i learned a lot about graph theory, but still know nothing about biology
+      </span>
+    ),
     link: "https://apps.cytoscape.org/apps/pathlinker",
     github: "https://github.com/Murali-group/PathLinker-Cytoscape",
     imgSrc: pathlinker
