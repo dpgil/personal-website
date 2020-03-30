@@ -48,7 +48,15 @@ export const projects: Project[] = [
   },
   {
     title: "Pente",
-    description: <span>Play Pente online with ur dad</span>,
+    description: (
+      <span>
+        i implemented an online version of the board game{" "}
+        <TextLink text="pente" link="https://en.wikipedia.org/wiki/Pente" />. i
+        built it when i was first learning how to navigate the world of
+        javascript, so don't look at the code too closely. the back end was
+        implemented using socket.io
+      </span>
+    ),
     link: "https://pente-online.herokuapp.com",
     github: "https://github.com/dpgil/pente",
     imgSrc: pente
