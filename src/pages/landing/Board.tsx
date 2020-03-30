@@ -1,22 +1,24 @@
 import React, { useEffect } from "react";
-import { oysterStateFromBoardState } from "./solution";
+import { generateKey, oysterStateFromBoardState } from "./solution";
+import { OysterState } from "./Oyster";
 
 interface BoardProps {
   size: number;
   setOysterState: (oysterState: OysterState) => void;
 }
 
-export type OysterState = boolean[];
 export type BoardState = boolean[];
 
 export const Board: React.FC<BoardProps> = props => {
   const { size, setOysterState } = props;
+  const [s] = React.useState<number[]>(generateKey(size * size, 6));
+  console.log(s);
 
   const [boardState, setBoardState] = React.useState<BoardState>(
-    new Array<boolean>(25)
+    new Array<boolean>(size * size)
   );
 
-  const setTilted = (cellIndex: number) => {
+  const toggleTilted = (cellIndex: number) => {
     return () => {
       setBoardState(bs => {
         const copy = [...bs];
@@ -27,7 +29,7 @@ export const Board: React.FC<BoardProps> = props => {
   };
 
   useEffect(() => {
-    setOysterState(oysterStateFromBoardState(boardState, [0, 1, 2, 3, 4, 5]));
+    setOysterState(oysterStateFromBoardState(boardState, s));
   }, [boardState]);
 
   const elements: JSX.Element[] = [];
@@ -35,8 +37,9 @@ export const Board: React.FC<BoardProps> = props => {
   for (let i = 0; i < size; i++) {
     elements.push(
       <TileRow
+        key={`r${i}`}
         tilted={boardState}
-        setTilted={setTilted}
+        toggleTilted={toggleTilted}
         rowIndex={i}
         size={size}
       />
@@ -57,11 +60,11 @@ interface RowProps {
   size: number;
   rowIndex: number;
   tilted: boolean[];
-  setTilted: (cellIndex: number) => () => void;
+  toggleTilted: (cellIndex: number) => () => void;
 }
 
 const TileRow: React.FC<RowProps> = props => {
-  const { size, rowIndex, tilted, setTilted } = props;
+  const { size, rowIndex, tilted, toggleTilted } = props;
 
   const tiles: JSX.Element[] = [];
 
@@ -69,8 +72,9 @@ const TileRow: React.FC<RowProps> = props => {
     const cellIndex = rowIndex * size + i;
     tiles.push(
       <Tile
+        key={`c${cellIndex}`}
         tilted={tilted.length > cellIndex && tilted[cellIndex]}
-        toggleTilted={setTilted(cellIndex)}
+        toggleTilted={toggleTilted(cellIndex)}
       />
     );
   }
