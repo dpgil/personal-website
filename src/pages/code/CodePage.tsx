@@ -44,7 +44,7 @@ const Description: React.FC = () => {
         />
         .
       </div>
-      <div style={descriptionStyle}>
+      <div style={{ ...descriptionStyle, paddingBottom: 0 }}>
         i also write code for fun- below are some projects that i've worked on
         in my free time. click on the picture to go to the project's website
       </div>
