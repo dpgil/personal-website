@@ -4,8 +4,8 @@ const getTileStyle = (isTilted: boolean): React.CSSProperties => {
   return {
     display: "inline-block",
     margin: 10,
-    width: 50,
-    height: 50,
+    width: 45,
+    height: 45,
     backgroundColor: isTilted ? "#f9b49b" : "#e0e0e0",
     borderRadius: 5,
     transform: `rotate(${isTilted ? 45 : 0}deg)`,
