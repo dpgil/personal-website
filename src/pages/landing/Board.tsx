@@ -12,7 +12,6 @@ export type BoardState = boolean[];
 export const Board: React.FC<BoardProps> = props => {
   const { size, setOysterState } = props;
   const [s] = React.useState<number[]>(generateKey(size * size, 6));
-  console.log(s);
 
   const [boardState, setBoardState] = React.useState<BoardState>(
     new Array<boolean>(size * size)
@@ -29,8 +28,9 @@ export const Board: React.FC<BoardProps> = props => {
   };
 
   useEffect(() => {
-    setOysterState(oysterStateFromBoardState(boardState, s));
-  }, [boardState]);
+    const oysterState = oysterStateFromBoardState(boardState, s);
+    setOysterState(oysterState);
+  }, [boardState, s, setOysterState]);
 
   const elements: JSX.Element[] = [];
 

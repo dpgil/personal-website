@@ -35,7 +35,6 @@ const descriptionStyle: React.CSSProperties = {
 };
 
 const Description: React.FC<{ oysterState: OysterState }> = props => {
-  console.log(props.oysterState);
   return (
     <div style={descriptionStyle}>
       hi, i'm daniel gil (not the american ninja warrior). check out my pages or

@@ -53,13 +53,6 @@ export const oysterStateFromBoardState = (
 ): OysterState => {
   const oysterState = [false, false, false, false, false, false];
 
-  boardState.forEach((tilted, i) => {
-    if (tilted && !key.includes(i)) {
-      console.log("returning empty oyster state");
-      return oysterState;
-    }
-  });
-
   key.forEach((k, i) => {
     if (boardState[k]) {
       oysterState[i] = true;
