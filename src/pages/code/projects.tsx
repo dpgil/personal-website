@@ -34,14 +34,28 @@ export const projects: Project[] = [
   },
   {
     title: "Personal Website",
-    description: <span>I built dis from scratch with react</span>,
+    description: (
+      <span>
+        i got tired of paying for my old personal website built with a wysiwyg
+        editor, so i built this one from scratch with react. i have a strong
+        affinity for sleek, minimal, colorless designs (as seen by my art), but
+        really i suck at color and it makes the design process so much easier
+      </span>
+    ),
     link: "https://dpgil.github.io",
     github: "https://github.com/dpgil/personal-website",
     imgSrc: personalWebsite
   },
   {
     title: "Type Master",
-    description: <span>Minimialist's whack-a-mole</span>,
+    description: (
+      <span>
+        minimialist's whack-a-mole. this is a game of endurance, raw talent, and
+        simplistic design appreciation. there's no back end whatsoever so if you
+        think you got a really high score, take a screenshot and send me an
+        email
+      </span>
+    ),
     link: "https://type-master.herokuapp.com",
     github: "https://github.com/dpgil/type-master",
     imgSrc: typeMaster

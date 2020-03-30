@@ -28,7 +28,7 @@ export const getProjectImageStyle = (hover: boolean): React.CSSProperties => {
   return {
     width: "100%",
     borderRadius: 10,
-    opacity: hover ? 0.7 : 1
+    opacity: hover ? 0.5 : 1
   };
 };
 

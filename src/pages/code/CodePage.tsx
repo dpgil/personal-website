@@ -13,7 +13,7 @@ export const CodePage: React.FC = () => {
   return (
     <div style={pageStyle}>
       <Description />
-      {projects.map((p, i) => (
+      {projects.map(p => (
         <ProjectBlock project={p} imageLeft={false} />
       ))}
     </div>
@@ -45,8 +45,8 @@ const Description: React.FC = () => {
         .
       </div>
       <div style={descriptionStyle}>
-        i also write code for fun. here are some projects that i've worked on in
-        my free time:
+        i also write code for fun- below are some projects that i've worked on
+        in my free time. click on the picture to go to the project's website
       </div>
     </>
   );

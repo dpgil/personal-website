@@ -2,6 +2,7 @@ import React from "react";
 import { Project } from "./projects";
 import { TextLink } from "./TextLink";
 import { blockColumnStyle } from "./ProjectBlock.styles";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const wrapperStyle: React.CSSProperties = {
   height: "100%"
@@ -26,8 +27,15 @@ export const ProjectInfo: React.FC<{ project: Project }> = props => {
         <div style={titleStyle}>{project.title}</div>
         <div style={descriptionStyle}>
           {project.description}
-          <div style={{ paddingTop: 10 }}>
-            <TextLink text="github" link={project.github} />
+          <div style={{ paddingTop: 15 }}>
+            <a
+              style={{ color: "inherit", fontSize: "large" }}
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon />
+            </a>
           </div>
         </div>
       </div>
