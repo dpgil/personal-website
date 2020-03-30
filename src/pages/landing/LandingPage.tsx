@@ -1,5 +1,5 @@
 import React from "react";
-import { Board } from "./Board";
+import { Board, OysterState } from "./Board";
 
 const boardSize = 5;
 
@@ -10,10 +10,8 @@ const pageStyle: React.CSSProperties = {
   paddingBottom: 20
 };
 
-export type PuzzleState = boolean[];
-
 export const LandingPage: React.FC = () => {
-  const [puzzleState, setPuzzleState] = React.useState<PuzzleState>([
+  const [oysterState, setOysterState] = React.useState<OysterState>([
     false,
     false,
     false,
@@ -24,8 +22,8 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div style={pageStyle}>
-      <Description puzzleState={puzzleState} />
-      <Board size={boardSize} setPuzzleState={setPuzzleState} />
+      <Description oysterState={oysterState} />
+      <Board size={boardSize} setOysterState={setOysterState} />
     </div>
   );
 };
@@ -35,12 +33,12 @@ const descriptionStyle: React.CSSProperties = {
   paddingBottom: 10
 };
 
-const Description: React.FC<{ puzzleState: PuzzleState }> = props => {
+const Description: React.FC<{ oysterState: OysterState }> = props => {
   return (
     <div style={descriptionStyle}>
       hi, i'm daniel gil (not the american ninja warrior). check out my pages or
       try to solve this puzzle, or both, or neither. the world is your{" "}
-      <Oyster puzzleState={props.puzzleState} />
+      <Oyster oysterState={props.oysterState} />
     </div>
   );
 };
@@ -51,16 +49,16 @@ const getLetterStyle = (solved: boolean): React.CSSProperties => {
   };
 };
 
-const Oyster: React.FC<{ puzzleState: PuzzleState }> = props => {
-  const { puzzleState } = props;
+const Oyster: React.FC<{ oysterState: OysterState }> = props => {
+  const { oysterState } = props;
   return (
     <>
-      <OysterLetter c="o" i={0} puzzleState={puzzleState} />
-      <OysterLetter c="y" i={1} puzzleState={puzzleState} />
-      <OysterLetter c="s" i={2} puzzleState={puzzleState} />
-      <OysterLetter c="t" i={3} puzzleState={puzzleState} />
-      <OysterLetter c="e" i={4} puzzleState={puzzleState} />
-      <OysterLetter c="r" i={5} puzzleState={puzzleState} />
+      <OysterLetter c="o" i={0} oysterState={oysterState} />
+      <OysterLetter c="y" i={1} oysterState={oysterState} />
+      <OysterLetter c="s" i={2} oysterState={oysterState} />
+      <OysterLetter c="t" i={3} oysterState={oysterState} />
+      <OysterLetter c="e" i={4} oysterState={oysterState} />
+      <OysterLetter c="r" i={5} oysterState={oysterState} />
     </>
   );
 };
@@ -68,14 +66,14 @@ const Oyster: React.FC<{ puzzleState: PuzzleState }> = props => {
 interface OysterLetterProps {
   c: string;
   i: number;
-  puzzleState: PuzzleState;
+  oysterState: OysterState;
 }
 
 const OysterLetter: React.FC<OysterLetterProps> = props => {
-  const { c, i, puzzleState } = props;
+  const { c, i, oysterState } = props;
 
   return (
-    <span style={getLetterStyle(puzzleState.length > i && puzzleState[i])}>
+    <span style={getLetterStyle(oysterState.length > i && oysterState[i])}>
       {c}
     </span>
   );
