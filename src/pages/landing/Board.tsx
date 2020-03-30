@@ -9,6 +9,10 @@ interface BoardProps {
 
 export type BoardState = boolean[];
 
+const boardStyle: React.CSSProperties = {
+  paddingBottom: 10
+};
+
 export const Board: React.FC<BoardProps> = props => {
   const { size, setOysterState } = props;
   const [s] = React.useState<number[]>(generateKey(size * size, 6));
@@ -46,7 +50,7 @@ export const Board: React.FC<BoardProps> = props => {
     );
   }
 
-  return <div>{elements}</div>;
+  return <div style={boardStyle}>{elements}</div>;
 };
 
 const tileMargin = 10;

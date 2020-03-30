@@ -22,7 +22,7 @@
  *
  *
  *
- *
+ * ???
  *
  *
  *
@@ -74,14 +74,14 @@ export const generateKey = (
 ): number[] => {
   // Always have the o as the top left
   let keys: number[] = [0];
-  let possibleKeys: number[] = [];
+  let possibleKeys = []; // [key, rando]
 
   for (let i = 1; i < possibilities; i++) {
-    possibleKeys.push(i);
+    possibleKeys.push([i, Math.random()]);
   }
 
-  possibleKeys.sort(() => 0.5 - Math.random());
+  possibleKeys.sort((a, b) => a[1] - b[1]);
   possibleKeys.splice(solutionSize - 1);
-  keys.push(...possibleKeys);
+  keys.push(...possibleKeys.map(k => k[0]));
   return keys;
 };

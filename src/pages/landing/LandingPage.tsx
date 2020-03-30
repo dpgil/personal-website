@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Board } from "./Board";
 import { Oyster, OysterState } from "./Oyster";
 
@@ -13,11 +13,17 @@ const pageStyle: React.CSSProperties = {
 
 export const LandingPage: React.FC = () => {
   const [oysterState, setOysterState] = React.useState<OysterState>(0x0);
+  const [solved, setSolved] = React.useState<boolean>(false);
+
+  useEffect(() => {
+    setSolved(oysterState === 63);
+  }, [oysterState]);
 
   return (
     <div style={pageStyle}>
       <Description oysterState={oysterState} />
       <Board size={boardSize} setOysterState={setOysterState} />
+      <div>{solved ? "You did it!" : ""}</div>
     </div>
   );
 };
