@@ -1,6 +1,5 @@
 import React from "react";
 import { Project } from "./projects";
-import { TextLink } from "./TextLink";
 import { blockColumnStyle } from "./ProjectBlock.styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
