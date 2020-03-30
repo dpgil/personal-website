@@ -83,5 +83,6 @@ export const generateKey = (
   possibleKeys.sort((a, b) => a[1] - b[1]);
   possibleKeys.splice(solutionSize - 1);
   keys.push(...possibleKeys.map(k => k[0]));
-  return keys;
+
+  return keys.sort((a, b) => a - b);
 };
