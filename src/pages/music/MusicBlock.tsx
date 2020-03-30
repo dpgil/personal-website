@@ -12,7 +12,7 @@ const titleStyle: React.CSSProperties = {
 };
 
 const separatorStyle: React.CSSProperties = {
-  borderTop: "dotted black 2px",
+  // borderTop: "dotted black 2px",
   maxWidth: 120,
   margin: "auto",
   marginTop: 30,

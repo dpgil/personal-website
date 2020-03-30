@@ -5,11 +5,12 @@ export const wrapperStyle: React.CSSProperties = {
 };
 
 export const separatorStyle: React.CSSProperties = {
-  borderTop: "dotted black 2px",
-  maxWidth: 120,
+  borderBottom: "solid black 2px",
+  width: "70%",
+  maxWidth: 500,
   margin: "auto",
-  marginTop: 30,
-  marginBottom: 20
+  marginTop: 50,
+  marginBottom: 50
 };
 
 const minBlockWidth = 360;
