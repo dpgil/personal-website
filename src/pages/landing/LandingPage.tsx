@@ -46,12 +46,36 @@ const GameBoard: React.FC<GameBoardProps> = props => {
       row.push(<GameTile />);
     }
 
-    elements.push(<div>{row}</div>);
+    elements.push(
+      <div style={{ marginLeft: -10, marginRight: -10 }}>{row}</div>
+    );
   }
 
   return <div>{elements}</div>;
 };
 
+const getTileStyle = (rotate: number): React.CSSProperties => {
+  return {
+    display: "inline-block",
+    margin: 10,
+    width: 50,
+    height: 50,
+    backgroundColor: "#e0e0e0",
+    borderRadius: 5,
+    transform: `rotate(${rotate}deg)`
+  };
+};
+
 const GameTile: React.FC = () => {
-  return <div style={{ display: "inline-block" }}>tile</div>;
+  const [rotate, setRotate] = React.useState<number>(0);
+
+  const onClick = () => {
+    setRotate(r => r + 45);
+  };
+
+  return (
+    <div className="gameTile" onClick={onClick} style={getTileStyle(rotate)}>
+      tile
+    </div>
+  );
 };

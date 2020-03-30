@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBody, AppHeader } from "./view";
 import { HashRouter as Router } from "react-router-dom";
+import "./App.css";
 
 const useStyles = makeStyles({
   root: {
