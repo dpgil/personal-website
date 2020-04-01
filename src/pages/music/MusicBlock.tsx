@@ -1,5 +1,5 @@
 import React from "react";
-import { MusicPlayer } from "./MusicPlayer";
+import ReactAudioPlayer from "react-audio-player";
 import { Song } from "../../media/noise";
 
 const wrapperStyle: React.CSSProperties = {
@@ -35,7 +35,7 @@ export const MusicBlock: React.FC<MusicBlockProps> = props => {
     <div style={wrapperStyle}>
       <div style={separatorStyle}></div>
       <div style={titleStyle}>{song.name}</div>
-      <MusicPlayer style={playerStyle} src={song.src} />
+      <ReactAudioPlayer src={song.src} style={playerStyle} controls />
     </div>
   );
 };
