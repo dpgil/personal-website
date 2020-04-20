@@ -5,7 +5,7 @@ import {
   personalWebsite,
   truthFiddle,
   typeMaster
-} from "../../media/projects";
+} from "../../media/code";
 import { TextLink } from "./TextLink";
 
 export type Project = {

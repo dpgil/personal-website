@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "../../media/img";
+import { Image } from "../../media/art";
 import {
   getImageStyle,
   imageBlockStyle,

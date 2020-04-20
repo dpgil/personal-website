@@ -1,5 +1,5 @@
 import React from "react";
-import { songs } from "../../media/noise";
+import { songs } from "../../media/music";
 import { MusicBlock } from "./MusicBlock";
 
 const pageStyle: React.CSSProperties = {

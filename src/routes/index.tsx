@@ -5,7 +5,7 @@ export const Routes = {
   },
   ArtPage: {
     path: "/art",
-    name: "ink"
+    name: "art"
   },
   CodePage: {
     path: "/code",
@@ -17,6 +17,6 @@ export const Routes = {
   },
   MusicPage: {
     path: "/music",
-    name: "noise"
+    name: "music"
   }
 };
