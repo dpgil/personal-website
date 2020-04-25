@@ -15,23 +15,23 @@ import orange from "./orange_square.jpg";
 import owl from "./owl_square.jpg";
 import peacock from "./peacock_square.jpg";
 
-export type Image = { name: string; src: string; year: number };
+export type Image = { name: string; path: string; src: string; year: number };
 
 export const images: Image[] = [
-  { name: "Ava", src: ava, year: 2019 },
-  { name: "Chimpanzee", src: chimpanzee, year: 2018 },
-  { name: "Cockatoo", src: cockatoo, year: 2019 },
-  { name: "Crow", src: crow, year: 2018 },
-  { name: "Body", src: femaleBody, year: 2019 },
-  { name: "Gaze", src: femalePortrait, year: 2018 },
-  { name: "Flower", src: flower, year: 2019 },
-  { name: "Frog", src: frog, year: 2019 },
-  { name: "Hand", src: hand, year: 2018 },
-  { name: "Jellyfish", src: jellyfish, year: 2018 },
-  { name: "Mask", src: mask, year: 2019 },
-  { name: "Mushroom", src: mushroom, year: 2019 },
-  { name: "Fungi", src: mushrooms, year: 2019 },
-  { name: "Orange", src: orange, year: 2019 },
-  { name: "Owl", src: owl, year: 2018 },
-  { name: "Peacock", src: peacock, year: 2019 }
+  { name: "Ava", path: "ava", src: ava, year: 2019 },
+  { name: "Chimpanzee", path: "chimpanzee", src: chimpanzee, year: 2018 },
+  { name: "Cockatoo", path: "cockatoo", src: cockatoo, year: 2019 },
+  { name: "Crow", path: "crow", src: crow, year: 2018 },
+  { name: "Body", path: "body", src: femaleBody, year: 2019 },
+  { name: "Gaze", path: "gaze", src: femalePortrait, year: 2018 },
+  { name: "Flower", path: "flower", src: flower, year: 2019 },
+  { name: "Frog", path: "frog", src: frog, year: 2019 },
+  { name: "Hand", path: "hand", src: hand, year: 2018 },
+  { name: "Jellyfish", path: "jellyfish", src: jellyfish, year: 2018 },
+  { name: "Mask", path: "mask", src: mask, year: 2019 },
+  { name: "Mushroom", path: "mushroom", src: mushroom, year: 2019 },
+  { name: "Fungi", path: "fungi", src: mushrooms, year: 2019 },
+  { name: "Orange", path: "orange", src: orange, year: 2019 },
+  { name: "Owl", path: "owl", src: owl, year: 2018 },
+  { name: "Peacock", path: "peacock", src: peacock, year: 2019 }
 ];
