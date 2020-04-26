@@ -5,7 +5,6 @@ import { images, Image } from "../../media/art";
 import { Link } from "react-router-dom";
 import { Routes } from "../../routes";
 import { History } from "history";
-import { blockColumnStyle } from "../code/ProjectBlock.styles";
 
 export const ArtPage: React.FC<{ history: History }> = props => {
   const path = props.history.location.pathname;
@@ -23,7 +22,11 @@ export const ArtPage: React.FC<{ history: History }> = props => {
     <div>
       <Grid>
         {images.map(i => (
-          <Link key={i.name} to={`${Routes.ArtPage.path}/${i.path}`}>
+          <Link
+            key={i.name}
+            to={`${Routes.ArtPage.path}/${i.path}`}
+            style={linkStyle}
+          >
             <ImageBlock image={i} />
           </Link>
         ))}
@@ -32,14 +35,18 @@ export const ArtPage: React.FC<{ history: History }> = props => {
   );
 };
 
+const linkStyle: React.CSSProperties = {
+  textDecoration: "none",
+  color: "inherit"
+};
+
+const detailImageStyle: React.CSSProperties = {
+  width: "100%",
+  maxWidth: 600,
+  padding: 10
+};
+
 const DetailPage: React.FC<{ image: Image }> = props => {
   const { image } = props;
-  return (
-    <div style={{ paddingTop: 20 }}>
-      <div>top</div>
-      <div>
-        <img src={image.src} style={{ width: "100%", maxWidth: 700 }} />
-      </div>
-    </div>
-  );
+  return <img src={image.src} style={detailImageStyle} />;
 };
