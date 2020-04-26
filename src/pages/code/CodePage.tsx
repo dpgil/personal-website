@@ -14,7 +14,7 @@ export const CodePage: React.FC = () => {
     <div style={pageStyle}>
       <Description />
       {projects.map(p => (
-        <ProjectBlock project={p} imageLeft={false} />
+        <ProjectBlock project={p} imageLeft={false} key={p.title} />
       ))}
     </div>
   );

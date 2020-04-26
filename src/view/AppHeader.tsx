@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { NavOptions } from "./";
 import { Page } from "../pages";
 import { Routes } from "../routes";
+import { History } from "history";
 
 const headerStyle: React.CSSProperties = {
   padding: "10px 0px",
@@ -16,8 +17,8 @@ const wrapperStyle: React.CSSProperties = {
   margin: "0px 10px"
 };
 
-const getSelectedPage = (): Page => {
-  const path = window.location.pathname;
+const getSelectedPage = (history: History): Page => {
+  const path = history.location.pathname;
   switch (path) {
     case Routes.ArtPage.path:
       return Page.ART;
@@ -32,9 +33,9 @@ const getSelectedPage = (): Page => {
   }
 };
 
-export const AppHeader: React.FC = () => {
+export const AppHeader: React.FC<{ history: History }> = props => {
   const [selectedPage, setSelectedPage] = React.useState<Page>(
-    getSelectedPage()
+    getSelectedPage(props.history)
   );
 
   return (
@@ -44,6 +45,7 @@ export const AppHeader: React.FC = () => {
           <NavOptions
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
+            history={props.history}
           />
         </div>
       </Grid>

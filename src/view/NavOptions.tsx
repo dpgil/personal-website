@@ -3,6 +3,7 @@ import { NavOption } from "./";
 import { Page } from "../pages";
 import { Routes } from "../routes";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import { History } from "history";
 
 const separator = " / ";
 
@@ -27,6 +28,7 @@ const mailIconStyle: React.CSSProperties = {
 interface NavOptionsProps {
   selectedPage: Page;
   setSelectedPage: (page: Page) => void;
+  history: History;
 }
 
 export const NavOptions: React.FC<NavOptionsProps> = props => {
@@ -36,7 +38,9 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
     <div>
       <span style={nameStyle}>
         <NavOption
-          onClick={() => setSelectedPage(Page.LANDING)}
+          onClick={() => {
+            setSelectedPage(Page.LANDING);
+          }}
           isSelected={false}
           route={Routes.Home}
         >
@@ -45,7 +49,9 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
       </span>
       <div style={navOptionsStyle}>
         <NavOption
-          onClick={() => setSelectedPage(Page.ART)}
+          onClick={() => {
+            setSelectedPage(Page.ART);
+          }}
           isSelected={selectedPage === Page.ART}
           route={Routes.ArtPage}
         >
@@ -53,7 +59,9 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => setSelectedPage(Page.CODE)}
+          onClick={() => {
+            setSelectedPage(Page.CODE);
+          }}
           isSelected={selectedPage === Page.CODE}
           route={Routes.CodePage}
         >
@@ -61,7 +69,9 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => setSelectedPage(Page.MUSIC)}
+          onClick={() => {
+            setSelectedPage(Page.MUSIC);
+          }}
           isSelected={selectedPage === Page.MUSIC}
           route={Routes.MusicPage}
         >
@@ -69,7 +79,9 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => setSelectedPage(Page.CONTACT)}
+          onClick={() => {
+            setSelectedPage(Page.CONTACT);
+          }}
           isSelected={selectedPage === Page.CONTACT}
           route={Routes.ContactPage}
         >

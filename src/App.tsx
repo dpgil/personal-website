@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBody, AppHeader } from "./view";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
+import history from "./history";
 
 const useStyles = makeStyles({
   root: {
@@ -21,9 +22,9 @@ export const App: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Router>
+    <Router history={history}>
       <div className={classes.root}>
-        <AppHeader />
+        <AppHeader history={history} />
         <AppBody />
       </div>
     </Router>
