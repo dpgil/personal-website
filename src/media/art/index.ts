@@ -15,7 +15,12 @@ import orange from "./orange_square.jpg";
 import owl from "./owl_square.jpg";
 import peacock from "./peacock_square.jpg";
 
-export type Image = { name: string; path: string; src: string; year: number };
+export type Image = {
+  name: string;
+  path: string;
+  src: string;
+  year: number;
+};
 
 export const images: Image[] = [
   { name: "Ava", path: "ava", src: ava, year: 2019 },
