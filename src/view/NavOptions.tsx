@@ -3,7 +3,6 @@ import { NavOption } from "./";
 import { Page } from "../pages";
 import { Routes } from "../routes";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import { History } from "history";
 
 const separator = " / ";
 
@@ -28,7 +27,6 @@ const mailIconStyle: React.CSSProperties = {
 interface NavOptionsProps {
   selectedPage: Page;
   setSelectedPage: (page: Page) => void;
-  history: History;
 }
 
 export const NavOptions: React.FC<NavOptionsProps> = props => {

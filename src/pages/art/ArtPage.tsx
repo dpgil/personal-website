@@ -24,7 +24,7 @@ export const ArtPage: React.FC<{ history: History }> = props => {
         {images.map(i => (
           <Link
             key={i.name}
-            to={`${process.env.PUBLIC_URL + Routes.ArtPage.path}/${i.path}`}
+            to={`${Routes.ArtPage.path}/${i.path}`}
             style={linkStyle}
           >
             <ImageBlock image={i} />

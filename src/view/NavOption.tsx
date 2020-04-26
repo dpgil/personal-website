@@ -79,7 +79,7 @@ export const NavOption: React.FC<NavOptionProps> = props => {
       onMouseUp={onMouseUp}
       onTouchEnd={() => setClickState(ClickState.DEFAULT)}
     >
-      <Link style={linkStyle} to={process.env.PUBLIC_URL + props.route.path}>
+      <Link style={linkStyle} to={props.route.path}>
         {props.children}
       </Link>
     </span>
