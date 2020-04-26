@@ -33,11 +33,30 @@ export const Routes = {
 
 const routes = () => (
   <Switch>
-    <Route exact path={Routes.Home.path} component={LandingPage} />
-    <Route path={Routes.ArtPage.path} component={ArtPage} />
-    <Route exact path={Routes.CodePage.path} component={CodePage} />
-    <Route exact path={Routes.ContactPage.path} component={ContactPage} />
-    <Route exact path={Routes.MusicPage.path} component={MusicPage} />
+    <Route
+      exact
+      path={process.env.PUBLIC_URL + Routes.Home.path}
+      component={LandingPage}
+    />
+    <Route
+      path={process.env.PUBLIC_URL + Routes.ArtPage.path}
+      component={ArtPage}
+    />
+    <Route
+      exact
+      path={process.env.PUBLIC_URL + Routes.CodePage.path}
+      component={CodePage}
+    />
+    <Route
+      exact
+      path={process.env.PUBLIC_URL + Routes.ContactPage.path}
+      component={ContactPage}
+    />
+    <Route
+      exact
+      path={process.env.PUBLIC_URL + Routes.MusicPage.path}
+      component={MusicPage}
+    />
   </Switch>
 );
 
