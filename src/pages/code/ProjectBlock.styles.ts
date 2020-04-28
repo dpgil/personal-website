@@ -13,16 +13,13 @@ export const separatorStyle: React.CSSProperties = {
   marginBottom: 50
 };
 
-const minBlockWidth = 360;
-const maxBlockWidth = 500;
+const maxBlockWidth = 360;
 
 export const blockColumnStyle: React.CSSProperties = {
   display: "inline-block",
-  minWidth: minBlockWidth,
   maxWidth: maxBlockWidth,
-  width: "50%",
-  padding: 10,
-  verticalAlign: "middle"
+  verticalAlign: "middle",
+  padding: 10
 };
 
 export const getProjectImageStyle = (hover: boolean): React.CSSProperties => {

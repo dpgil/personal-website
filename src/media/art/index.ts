@@ -23,17 +23,17 @@ export type Image = {
 };
 
 export const images: Image[] = [
-  { name: "Ava", path: "ava", src: ava, year: 2019 },
+  { name: "Jellyfish", path: "jellyfish", src: jellyfish, year: 2018 },
   { name: "Chimpanzee", path: "chimpanzee", src: chimpanzee, year: 2018 },
   { name: "Cockatoo", path: "cockatoo", src: cockatoo, year: 2019 },
   { name: "Crow", path: "crow", src: crow, year: 2018 },
-  { name: "Body", path: "body", src: femaleBody, year: 2019 },
+  { name: "Mask", path: "mask", src: mask, year: 2019 },
   { name: "Gaze", path: "gaze", src: femalePortrait, year: 2018 },
   { name: "Flower", path: "flower", src: flower, year: 2019 },
   { name: "Frog", path: "frog", src: frog, year: 2019 },
   { name: "Hand", path: "hand", src: hand, year: 2018 },
-  { name: "Jellyfish", path: "jellyfish", src: jellyfish, year: 2018 },
-  { name: "Mask", path: "mask", src: mask, year: 2019 },
+  { name: "Ava", path: "ava", src: ava, year: 2019 },
+  { name: "Body", path: "body", src: femaleBody, year: 2019 },
   { name: "Mushroom", path: "mushroom", src: mushroom, year: 2019 },
   { name: "Fungi", path: "fungi", src: mushrooms, year: 2019 },
   { name: "Orange", path: "orange", src: orange, year: 2019 },

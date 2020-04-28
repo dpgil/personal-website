@@ -8,7 +8,8 @@ const wrapperStyle: React.CSSProperties = {
 
 const titleStyle: React.CSSProperties = {
   textAlign: "left",
-  paddingBottom: 5
+  paddingBottom: 5,
+  fontSize: 20
 };
 
 const separatorStyle: React.CSSProperties = {

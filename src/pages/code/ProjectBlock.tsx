@@ -21,9 +21,7 @@ export const ProjectBlock: React.FC<ProjectBlockProps> = props => {
       <ProjectSeparator />
       <div style={bodyStyle}>
         {imageLeft && <ProjectImage project={project} />}
-        <div style={blockColumnStyle}>
-          <ProjectInfo project={project} />
-        </div>
+        <ProjectInfo project={project} />
         {!imageLeft && <ProjectImage project={project} />}
       </div>
     </div>

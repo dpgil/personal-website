@@ -6,7 +6,8 @@ import { TextLink } from "./TextLink";
 const pageStyle: React.CSSProperties = {
   width: "90%",
   margin: "auto",
-  paddingBottom: 20
+  paddingBottom: 20,
+  paddingTop: 20
 };
 
 export const CodePage: React.FC = () => {
@@ -24,7 +25,8 @@ const descriptionStyle: React.CSSProperties = {
   maxWidth: "700px",
   textAlign: "left",
   paddingBottom: 20,
-  margin: "auto"
+  margin: "auto",
+  fontSize: 20
 };
 
 const Description: React.FC = () => {

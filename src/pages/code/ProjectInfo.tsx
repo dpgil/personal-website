@@ -33,7 +33,7 @@ export const ProjectInfo: React.FC<{ project: Project }> = props => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GitHubIcon />
+              <GitHubIcon fontSize="large" />
             </a>
           </div>
         </div>

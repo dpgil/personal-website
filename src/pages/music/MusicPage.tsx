@@ -22,7 +22,9 @@ export const MusicPage = () => {
 
 const descriptionStyle: React.CSSProperties = {
   textAlign: "left",
-  paddingBottom: 10
+  paddingBottom: 10,
+  paddingTop: 20,
+  fontSize: 20
 };
 
 const Description: React.FC = () => {
