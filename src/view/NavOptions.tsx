@@ -71,6 +71,6 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
   );
 };
 
-const NavName: React.FC<{ name: string }> = props => {
+export const NavName: React.FC<{ name: string }> = props => {
   return <span>{props.name}</span>;
 };
