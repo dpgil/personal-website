@@ -48,5 +48,5 @@ const detailImageStyle: React.CSSProperties = {
 
 const DetailPage: React.FC<{ image: Image }> = props => {
   const { image } = props;
-  return <img src={image.src} style={detailImageStyle} />;
+  return <img src={image.src} style={detailImageStyle} alt={image.name} />;
 };
