@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
+import { Route, Switch } from "react-router-dom";
 import { NavOptions } from "./";
 import { Page } from "../pages";
 import { Routes } from "../routes";
@@ -16,37 +16,28 @@ const wrapperStyle: React.CSSProperties = {
   margin: "0px 10px"
 };
 
-const getSelectedPage = (): Page => {
-  const path = window.location.hash;
-  switch (path) {
-    case Routes.ArtPage.path:
-      return Page.ART;
-    case Routes.CodePage.path:
-      return Page.CODE;
-    case Routes.ContactPage.path:
-      return Page.CONTACT;
-    case Routes.MusicPage.path:
-      return Page.MUSIC;
-    default:
-      return Page.LANDING;
-  }
-};
-
 export const AppHeader: React.FC = () => {
-  const [selectedPage, setSelectedPage] = React.useState<Page>(
-    getSelectedPage()
-  );
-
   return (
     <div style={headerStyle}>
-      <Grid>
-        <div style={wrapperStyle}>
-          <NavOptions
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-          />
-        </div>
-      </Grid>
+      <div style={wrapperStyle}>
+        <Switch>
+          <Route exact path={Routes.Home.path}>
+            <NavOptions selectedPage={Page.LANDING} />
+          </Route>
+          <Route exact path={Routes.ArtPage.path}>
+            <NavOptions selectedPage={Page.ART} />
+          </Route>
+          <Route exact path={Routes.CodePage.path}>
+            <NavOptions selectedPage={Page.CODE} />
+          </Route>
+          <Route exact path={Routes.MusicPage.path}>
+            <NavOptions selectedPage={Page.MUSIC} />
+          </Route>
+          <Route exact path={Routes.ContactPage.path}>
+            <NavOptions selectedPage={Page.CONTACT} />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 };

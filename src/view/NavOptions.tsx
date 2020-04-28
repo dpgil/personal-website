@@ -26,30 +26,20 @@ const mailIconStyle: React.CSSProperties = {
 
 interface NavOptionsProps {
   selectedPage: Page;
-  setSelectedPage: (page: Page) => void;
 }
 
 export const NavOptions: React.FC<NavOptionsProps> = props => {
-  const { selectedPage, setSelectedPage } = props;
+  const { selectedPage } = props;
 
   return (
     <div>
       <span style={nameStyle}>
-        <NavOption
-          onClick={() => {
-            setSelectedPage(Page.LANDING);
-          }}
-          isSelected={false}
-          route={Routes.Home}
-        >
+        <NavOption isSelected={false} route={Routes.Home}>
           <NavName name={Routes.Home.name} />
         </NavOption>
       </span>
       <div style={navOptionsStyle}>
         <NavOption
-          onClick={() => {
-            setSelectedPage(Page.ART);
-          }}
           isSelected={selectedPage === Page.ART}
           route={Routes.ArtPage}
         >
@@ -57,9 +47,6 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => {
-            setSelectedPage(Page.CODE);
-          }}
           isSelected={selectedPage === Page.CODE}
           route={Routes.CodePage}
         >
@@ -67,9 +54,6 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => {
-            setSelectedPage(Page.MUSIC);
-          }}
           isSelected={selectedPage === Page.MUSIC}
           route={Routes.MusicPage}
         >
@@ -77,9 +61,6 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
-          onClick={() => {
-            setSelectedPage(Page.CONTACT);
-          }}
           isSelected={selectedPage === Page.CONTACT}
           route={Routes.ContactPage}
         >
