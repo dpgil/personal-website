@@ -21,10 +21,7 @@ export const AppHeader: React.FC = () => {
     <div style={headerStyle}>
       <div style={wrapperStyle}>
         <Switch>
-          <Route exact path={Routes.Home.path}>
-            <NavOptions selectedPage={Page.LANDING} />
-          </Route>
-          <Route exact path={Routes.ArtPage.path}>
+          <Route path={Routes.ArtPage.path}>
             <NavOptions selectedPage={Page.ART} />
           </Route>
           <Route exact path={Routes.CodePage.path}>
