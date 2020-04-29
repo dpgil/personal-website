@@ -61,6 +61,13 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
         </NavOption>
         {separator}
         <NavOption
+          isSelected={selectedPage === Page.BLOG}
+          route={Routes.BlogPage}
+        >
+          <NavName name={Routes.BlogPage.name} />
+        </NavOption>
+        {separator}
+        <NavOption
           isSelected={selectedPage === Page.CONTACT}
           route={Routes.ContactPage}
         >

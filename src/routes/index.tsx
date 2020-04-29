@@ -7,6 +7,10 @@ export const Routes = {
     path: "/art",
     name: "art"
   },
+  BlogPage: {
+    path: "/blog",
+    name: "blog"
+  },
   CodePage: {
     path: "/code",
     name: "code"

@@ -27,6 +27,7 @@ export const LandingPage: React.FC = () => {
       <LandingOption route={Routes.ArtPage} />
       <LandingOption route={Routes.CodePage} />
       <LandingOption route={Routes.MusicPage} />
+      <LandingOption route={Routes.BlogPage} />
       <LandingOption route={Routes.ContactPage} />
     </div>
   );
