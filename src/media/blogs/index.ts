@@ -8,6 +8,7 @@ export type Blog = {
   month: string;
   day: string;
   description: string;
+  id: string;
   content: JSX.Element;
   language: Language;
 };

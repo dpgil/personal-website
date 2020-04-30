@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { blogs } from "../../media/blogs";
 import { BlogBlock } from "./BlogBlock";
+import { Routes } from "../../routes";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
@@ -9,12 +11,23 @@ const pageStyle: React.CSSProperties = {
   paddingBottom: 20
 };
 
+const linkStyle: React.CSSProperties = {
+  textDecoration: "none",
+  color: "inherit"
+};
+
 export const BlogPage: React.FC = () => {
   return (
     <div style={pageStyle}>
       <Description />
       {blogs.map(b => (
-        <BlogBlock key={b.title} blog={b} />
+        <Link
+          key={b.title}
+          to={`${Routes.BlogPage.path}/${b.year}/${b.month}/${b.day}/${b.id}`}
+          style={linkStyle}
+        >
+          <BlogBlock key={b.title} blog={b} />
+        </Link>
       ))}
     </div>
   );

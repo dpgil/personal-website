@@ -8,6 +8,7 @@ const busquedaBlog: Blog = {
   month: "04",
   day: "26",
   description: "Concepto, rendimiento, e implementación",
+  id: "busqueda",
   content: <div>hello</div>,
   language: Language.SPANISH
 };

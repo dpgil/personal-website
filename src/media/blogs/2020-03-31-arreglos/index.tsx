@@ -8,6 +8,7 @@ const arregloBlog: Blog = {
   month: "03",
   day: "31",
   description: "Estructuras de datos",
+  id: "arreglos",
   content: <div>hello</div>,
   language: Language.SPANISH
 };
