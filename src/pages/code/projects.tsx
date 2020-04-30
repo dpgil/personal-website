@@ -6,7 +6,7 @@ import {
   truthFiddle,
   typeMaster
 } from "../../media/code";
-import { TextLink } from "./TextLink";
+import { TextLink } from "../../common";
 
 export type Project = {
   title: string;

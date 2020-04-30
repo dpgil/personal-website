@@ -2,7 +2,9 @@ import React from "react";
 import { Blog } from "../../media/blogs";
 
 const wrapperStyle: React.CSSProperties = {
-  textAlign: "left"
+  textAlign: "left",
+  fontSize: 20,
+  paddingBottom: 30
 };
 
 const titleStyle: React.CSSProperties = {
@@ -12,9 +14,9 @@ const titleStyle: React.CSSProperties = {
 };
 
 const descriptionStyle: React.CSSProperties = {
-  fontSize: 24,
   color: "#808080",
-  paddingBottom: 20
+  paddingBottom: 20,
+  fontSize: 22
 };
 
 export const DetailBlog: React.FC<{ blog: Blog }> = props => {

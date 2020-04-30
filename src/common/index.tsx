@@ -6,7 +6,7 @@ export const TextLink: React.FC<{ text: string; link: string }> = props => {
       href={props.link}
       target="_blank"
       rel="noopener noreferrer"
-      style={linkStyle}
+      style={{ color: "inherit" }}
     >
       {props.text}
     </a>
