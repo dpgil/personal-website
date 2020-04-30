@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBody, AppHeader } from "./view";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -21,7 +21,7 @@ export const App: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className={classes.root}>
         <AppHeader />
         <AppBody />
