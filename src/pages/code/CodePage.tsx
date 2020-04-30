@@ -22,7 +22,7 @@ export const CodePage: React.FC = () => {
 };
 
 const descriptionStyle: React.CSSProperties = {
-  maxWidth: "700px",
+  maxWidth: 600,
   textAlign: "left",
   paddingBottom: 20,
   margin: "auto",

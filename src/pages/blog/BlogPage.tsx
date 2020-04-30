@@ -4,7 +4,7 @@ import { BlogBlock } from "./BlogBlock";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
-  maxWidth: 700,
+  maxWidth: 600,
   margin: "auto",
   paddingBottom: 20
 };

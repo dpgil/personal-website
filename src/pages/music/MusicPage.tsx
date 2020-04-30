@@ -4,7 +4,7 @@ import { MusicBlock } from "./MusicBlock";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
-  maxWidth: "700px",
+  maxWidth: 600,
   margin: "auto",
   paddingBottom: 20
 };
