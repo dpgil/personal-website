@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { linkStyle } from "../common";
 
 enum ClickState {
   DEFAULT,
@@ -32,12 +33,6 @@ const getNavOptionStyle = (
       return isSelected ? hoverStyle : defaultStyle;
   }
 };
-
-const linkStyle: React.CSSProperties = {
-  textDecoration: "none",
-  color: "inherit"
-};
-
 interface NavOptionProps {
   route: { path: string; name: string };
   isSelected: boolean;

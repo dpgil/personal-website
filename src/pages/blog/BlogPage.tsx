@@ -3,17 +3,13 @@ import { Link } from "react-router-dom";
 import { blogs } from "../../media/blogs";
 import { BlogBlock } from "./BlogBlock";
 import { Routes } from "../../routes";
+import { linkStyle } from "../../common";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
   maxWidth: 600,
   margin: "auto",
   paddingBottom: 20
-};
-
-const linkStyle: React.CSSProperties = {
-  textDecoration: "none",
-  color: "inherit"
 };
 
 export const BlogPage: React.FC = () => {
