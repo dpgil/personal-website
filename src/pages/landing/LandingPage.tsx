@@ -8,7 +8,7 @@ const pageStyle: React.CSSProperties = {
   maxWidth: "700px",
   margin: "auto",
   paddingBottom: 20,
-  paddingTop: 100
+  paddingTop: 80
 };
 
 const nameStyle: React.CSSProperties = {

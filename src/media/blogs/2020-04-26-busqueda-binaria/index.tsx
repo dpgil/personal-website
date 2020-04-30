@@ -112,8 +112,8 @@ const Content: React.FC = () => {
             "https://gist.github.com/dpgil/d325b41df9be53c8aec4a7068831e789#file-busqueda-binaria-py"
           }
         />{" "}
-        hay es una implementación en Python de un algoritmo de búsqueda binaria.
-        He incluido algunos comentarios para facilitar la lectura.
+        hay una implementación en Python de un algoritmo de búsqueda binaria. He
+        incluido algunos comentarios para facilitar la lectura.
       </Paragraph>
       <Paragraph>
         El siguiente GIF puede ayudarte a entender un poco mejor qué está

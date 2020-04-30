@@ -16,7 +16,7 @@ const nameStyle: React.CSSProperties = {
 const navOptionsStyle: React.CSSProperties = {
   padding: "0px 10px",
   display: "inline-block",
-  fontSize: "28px"
+  fontSize: "26px"
 };
 
 const mailIconStyle: React.CSSProperties = {
