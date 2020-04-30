@@ -1,8 +1,9 @@
 import React from "react";
 import { TextLink } from "../../common";
+import { maxPageWidth } from "../../common/constants";
 
 const descriptionStyle: React.CSSProperties = {
-  maxWidth: 600,
+  maxWidth: maxPageWidth,
   textAlign: "left",
   paddingBottom: 20,
   margin: "auto",

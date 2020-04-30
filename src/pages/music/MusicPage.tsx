@@ -1,10 +1,11 @@
 import React from "react";
 import { songs } from "../../media/music";
 import { MusicBlock } from "./MusicBlock";
+import { maxPageWidth } from "../../common/constants";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
-  maxWidth: 600,
+  maxWidth: maxPageWidth,
   margin: "auto",
   paddingBottom: 20
 };

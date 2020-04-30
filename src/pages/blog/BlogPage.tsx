@@ -7,6 +7,7 @@ import { Description } from "./Description";
 import { linkStyle } from "../../common";
 import { blogs, Blog } from "../../media/blogs";
 import { Routes } from "../../routes";
+import { maxPageWidth } from "../../common/constants";
 
 export const BlogPage: React.FC<{ history: History }> = props => {
   const path = props.history.location.pathname;
@@ -55,7 +56,7 @@ const pathMatch = (blog: Blog, path: string): boolean => {
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
-  maxWidth: 600,
+  maxWidth: maxPageWidth,
   margin: "auto",
   paddingBottom: 20
 };

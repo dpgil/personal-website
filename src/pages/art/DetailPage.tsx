@@ -1,9 +1,10 @@
 import React from "react";
 import { Image } from "../../media/art";
+import { maxPageWidth } from "../../common/constants";
 
 const detailImageStyle: React.CSSProperties = {
   width: "100%",
-  maxWidth: 600,
+  maxWidth: maxPageWidth,
   padding: 10
 };
 

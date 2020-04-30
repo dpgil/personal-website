@@ -12,8 +12,7 @@ const headerStyle: React.CSSProperties = {
 const wrapperStyle: React.CSSProperties = {
   display: "inline-block",
   borderBottom: "solid",
-  padding: "5px 0px",
-  margin: "0px 10px"
+  padding: "5px 0px"
 };
 
 export const AppHeader: React.FC = () => {
