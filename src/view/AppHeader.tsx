@@ -30,7 +30,7 @@ export const AppHeader: React.FC = () => {
           <Route exact path={Routes.MusicPage.path}>
             <NavOptions selectedPage={Page.MUSIC} />
           </Route>
-          <Route exact path={Routes.BlogPage.path}>
+          <Route path={Routes.BlogPage.path}>
             <NavOptions selectedPage={Page.BLOG} />
           </Route>
           <Route exact path={Routes.ContactPage.path}>

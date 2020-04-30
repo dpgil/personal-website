@@ -22,7 +22,7 @@ export const AppBody: React.FC = () => {
         <Route path={Routes.ArtPage.path} component={ArtPage} />
         <Route exact path={Routes.CodePage.path} component={CodePage} />
         <Route exact path={Routes.MusicPage.path} component={MusicPage} />
-        <Route exact path={Routes.BlogPage.path} component={BlogPage} />
+        <Route path={Routes.BlogPage.path} component={BlogPage} />
         <Route exact path={Routes.ContactPage.path} component={ContactPage} />
       </Switch>
     </div>
