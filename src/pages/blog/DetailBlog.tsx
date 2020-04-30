@@ -8,14 +8,14 @@ const wrapperStyle: React.CSSProperties = {
 };
 
 const titleStyle: React.CSSProperties = {
-  paddingTop: 20,
+  paddingTop: 30,
   fontWeight: "bold",
   fontSize: 35
 };
 
 const descriptionStyle: React.CSSProperties = {
   color: "#808080",
-  paddingBottom: 20,
+  paddingBottom: 10,
   fontSize: 22
 };
 

@@ -7,9 +7,9 @@ import bb1 from "./bb-1.gif";
 import bb2 from "./bb-2.gif";
 import { Header, Image, Paragraph } from "../tags";
 
-const BusquedaContent: React.FC = () => {
+const Content: React.FC = () => {
   return (
-    <div>
+    <>
       <Header>Introducción</Header>
       <Paragraph>
         Esta lección asume que sabes qué son arreglos. Si no conoces qué es un
@@ -161,7 +161,7 @@ const BusquedaContent: React.FC = () => {
         en Leetcode. Y por favor dime si hay algo que omití o si aún tienes
         alguna pregunta.
       </Paragraph>
-    </div>
+    </>
   );
 };
 
@@ -172,7 +172,7 @@ const busquedaBlog: Blog = {
   day: "26",
   description: "Concepto, rendimiento, e implementación",
   id: "busqueda",
-  content: <BusquedaContent />,
+  content: <Content />,
   language: Language.SPANISH
 };
 
