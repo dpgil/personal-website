@@ -1,33 +1,12 @@
 import React from "react";
 import { History } from "history";
 import { Link } from "react-router-dom";
-import { blogs, Blog } from "../../media/blogs";
 import { BlogBlock } from "./BlogBlock";
-import { Routes } from "../../routes";
+import { DetailBlog } from "./DetailBlog";
+import { Description } from "./Description";
 import { linkStyle } from "../../common";
-
-const DetailBlog: React.FC<{ blog: Blog }> = props => {
-  const { blog } = props;
-  return (
-    <div>
-      {blog.title}
-      {" detail page@!!"}
-    </div>
-  );
-};
-
-const pathMatch = (blog: Blog, path: string): boolean => {
-  const p = path.split("/");
-  if (p.length < 4) {
-    return false;
-  }
-  return (
-    blog.year === p[0] &&
-    blog.month === p[1] &&
-    blog.day === p[2] &&
-    blog.id === p[3]
-  );
-};
+import { blogs, Blog } from "../../media/blogs";
+import { Routes } from "../../routes";
 
 export const BlogPage: React.FC<{ history: History }> = props => {
   const path = props.history.location.pathname;
@@ -57,25 +36,22 @@ export const BlogPage: React.FC<{ history: History }> = props => {
   );
 };
 
+const pathMatch = (blog: Blog, path: string): boolean => {
+  const p = path.split("/");
+  if (p.length < 4) {
+    return false;
+  }
+  return (
+    blog.year === p[0] &&
+    blog.month === p[1] &&
+    blog.day === p[2] &&
+    blog.id === p[3]
+  );
+};
+
 const pageStyle: React.CSSProperties = {
   width: "90%",
   maxWidth: 600,
   margin: "auto",
   paddingBottom: 20
-};
-
-const descriptionStyle: React.CSSProperties = {
-  textAlign: "left",
-  paddingBottom: 10,
-  paddingTop: 20,
-  fontSize: 20
-};
-
-const Description: React.FC = () => {
-  return (
-    <div style={descriptionStyle}>
-      some of my tutorials, rants, and just general musings. opinions are
-      entirely my own
-    </div>
-  );
 };
