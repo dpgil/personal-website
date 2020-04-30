@@ -16,7 +16,11 @@ export const BlogPage: React.FC<{ history: History }> = props => {
     const piece = blogs.find(b => pathMatch(b, piecePath));
     if (piece !== undefined) {
       // We're on the detail page for some piece.
-      return <DetailBlog blog={piece} />;
+      return (
+        <div style={pageStyle}>
+          <DetailBlog blog={piece} />
+        </div>
+      );
     }
   }
 

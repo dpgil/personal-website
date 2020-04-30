@@ -16,7 +16,7 @@ export const titleStyle: React.CSSProperties = {
 
 export const descriptionStyle: React.CSSProperties = {
   fontSize: 20,
-  color: "#a0a0a0"
+  color: "#808080"
 };
 
 export const getWrapperStyle = (hover: boolean): React.CSSProperties => {
