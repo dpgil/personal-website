@@ -23,7 +23,6 @@ export const DetailBlog: React.FC<{ blog: Blog }> = props => {
     <div style={wrapperStyle}>
       <div style={titleStyle}>{blog.title}</div>
       <div style={descriptionStyle}>{blog.description}</div>
-
       {blog.content}
     </div>
   );

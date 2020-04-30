@@ -1,5 +1,5 @@
 import React from "react";
-import { TextLink } from "./TextLink";
+import { TextLink } from "../../common";
 
 const descriptionStyle: React.CSSProperties = {
   maxWidth: 600,
