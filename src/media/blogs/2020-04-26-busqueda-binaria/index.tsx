@@ -5,37 +5,7 @@ import { TextLink } from "../../../common";
 import bb0 from "./bb-0.png";
 import bb1 from "./bb-1.gif";
 import bb2 from "./bb-2.gif";
-
-const headerStyle: React.CSSProperties = {
-  fontSize: 28,
-  fontWeight: "bold",
-  paddingTop: 25,
-  paddingBottom: 10
-};
-
-const Header: React.FC = props => {
-  return <div style={headerStyle}>{props.children}</div>;
-};
-
-const pStyle: React.CSSProperties = {
-  paddingTop: 13,
-  paddingBottom: 13
-};
-
-// yes i know <p> tag exists
-const Paragraph: React.FC = props => {
-  return <div style={pStyle}>{props.children}</div>;
-};
-
-const imgStyle: React.CSSProperties = {
-  width: "100%",
-  paddingTop: 5,
-  paddingBottom: 5
-};
-
-const Image: React.FC<{ src: string; alt: string }> = props => {
-  return <img style={imgStyle} src={props.src} alt={props.alt} />;
-};
+import { Header, Image, Paragraph } from "../tags";
 
 const BusquedaContent: React.FC = () => {
   return (
