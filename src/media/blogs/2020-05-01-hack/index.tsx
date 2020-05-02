@@ -64,7 +64,7 @@ const Content: React.FC = () => {
       </Paragraph>
       <Paragraph>
         When I was working at the really big company, one time I tried to check
-        in a change that the lead architect for the project disagreed with. He
+        in a change that the lead architect on a project disagreed with. He
         stated why he didn't like it and I explained why I thought it was
         necessary. He eventually said something like, "Look, if I let you check
         in this code, it's not going to affect you. But in twenty years, it
