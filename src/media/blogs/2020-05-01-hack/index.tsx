@@ -95,7 +95,7 @@ const Content: React.FC = () => {
 };
 
 const blog: Blog = {
-  title: "The temporary hack",
+  title: "Temporary hacks",
   year: "2020",
   month: "05",
   day: "01",

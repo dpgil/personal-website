@@ -16,7 +16,7 @@ const Content: React.FC = () => {
   );
 };
 
-const template: Blog = {
+const content: Blog = {
   title: "Some title",
   year: "2020",
   month: "04",
@@ -27,4 +27,4 @@ const template: Blog = {
   language: Language.ENGLISH
 };
 
-export default template;
+export default content;

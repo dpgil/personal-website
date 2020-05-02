@@ -1,6 +1,7 @@
 import arreglos from "./2020-03-31-arreglos";
 import busqueda from "./2020-04-26-busqueda";
 import hack from "./2020-05-01-hack";
+import gambling from "./gambling";
 import { Language } from "./language";
 
 export type Blog = {
@@ -14,4 +15,4 @@ export type Blog = {
   language: Language;
 };
 
-export const blogs: Blog[] = [hack, busqueda, arreglos];
+export const blogs: Blog[] = [gambling, hack, busqueda, arreglos];
