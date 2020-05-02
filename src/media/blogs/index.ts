@@ -1,7 +1,7 @@
 import arreglos from "./2020-03-31-arreglos";
 import busqueda from "./2020-04-26-busqueda";
 import hack from "./2020-05-01-hack";
-import gambling from "./gambling";
+import gambling from "./2020-05-02-gambling";
 import { Language } from "./language";
 
 export type Blog = {
