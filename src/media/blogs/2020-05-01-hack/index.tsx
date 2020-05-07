@@ -100,7 +100,7 @@ const blog: Blog = {
   month: "05",
   day: "01",
   description: 'And the myth of "doing it later"',
-  id: "hack",
+  id: "hacks",
   content: <Content />,
   language: Language.ENGLISH
 };

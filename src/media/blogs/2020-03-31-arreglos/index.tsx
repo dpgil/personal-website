@@ -166,7 +166,7 @@ const arregloBlog: Blog = {
   month: "03",
   day: "31",
   description: "Estructuras de datos",
-  id: "arreglos",
+  id: "arreglo",
   content: <Content />,
   language: Language.SPANISH
 };
