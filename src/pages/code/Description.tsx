@@ -15,8 +15,8 @@ export const Description: React.FC = () => {
     <>
       <div style={descriptionStyle}>
         for money, i write code. i currently work in observability for lyft in
-        nyc. around 80% of my time is spent building systems in golang, the rest
-        on front end work in react/typescript.
+        nyc. around 80% of my time is spent building systems in go, the rest on
+        front end work in react/typescript.
       </div>
       <div style={descriptionStyle}>
         previously i was in seattle working at microsoft on office online and
