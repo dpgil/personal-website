@@ -14,24 +14,18 @@ const Content: React.FC = () => {
   return (
     <>
       <Paragraph>
-        [DRAFT] In my transition from a front end engineer to a back end
-        engineer (on observability!!), the word observability was a foreign term
-        that meant nothing to me.
+        I think any concept should be able to be "explained like I'm 5." This is
+        kind of like an elevator pitch, but the elevator ride is ten minutes
+        long, and the other person in the elevator isn't the CEO, rather a
+        friend that works in a totally different field. But when my mom asked me
+        to explain what I've been working on all this time on the computer, I
+        struggled to express the concepts without babbling jargon.
       </Paragraph>
       <Paragraph>
-        When my mom asked me to explain what I was working on al lthat ime on
-        the computer, I struggled to express the concepts without babbling
-        jargon.
-      </Paragraph>
-      <Paragraph>
-        I think any concept should be able to be "explained like I'm 5," kind of
-        like an elevator pitch, but the elevator ride is ten minutes long, and
-        the other person in the elevator isn't the CEO, rather a friend that
-        works in a totally different field. Whenever I start something new, I
-        look for simple, bird-eye view explanations of the concepts involved.
-        Before starting my new tole at the beginning of this year, I found a lot
-        of material on observability, but most of which assumed that I new
-        Stuff™.
+        Whenever I start something new, I look for simple, bird-eye view
+        explanations of the concepts involved. Before starting my new role at
+        the beginning of this year, I found a lot of material on observability,
+        but most of which assumed that I knew Stuff™.
       </Paragraph>
       <Paragraph>Here's the article I wish I read six months ago.</Paragraph>
       <Paragraph>
@@ -82,7 +76,9 @@ const Content: React.FC = () => {
         valid responses being sent from the service? Is the service crashing at
         any point?
       </Paragraph>
-      <Paragraph>We need metrics to answer any of these questions.</Paragraph>
+      <Paragraph>
+        Metrics are needed to answer any of these questions.
+      </Paragraph>
       <Header>Metrics</Header>
       <Paragraph>
         Let's modify the service so that every single time someone makes a
@@ -100,7 +96,7 @@ const Content: React.FC = () => {
       />
       <Paragraph>
         In practice, it wouldn't be exactly 500 requests per minute. Sometimes
-        we could get more, sometimes less. Assuming the rate of traffic is
+        there could be more, sometimes less. Assuming the rate of traffic is
         relatively stable, a more realistic graph might look like this:
       </Paragraph>
       <Image
@@ -126,21 +122,22 @@ const Content: React.FC = () => {
       </Paragraph>
       <Paragraph>
         Sometimes things go wrong, though. For example, if the pricing code was
-        changed in a way that breaks a lot of stuff, Emily would want to know as
+        changed in a way that breaks a lot of stuff, we would want to know as
         quickly as possible to fix the problem.
       </Paragraph>
       <Paragraph>
         Let's change things so that we emit some metric on success, and another
         one on any error that occurs. Suppose we have a ~1% error rate. Here's a
-        graph that would represent that.
+        graph that would represent that, with the green line marking total
+        requests/minute and the red line marking errors/minute.
       </Paragraph>
       <Image
         src={graph3}
         alt={"Graph displaying 500 requests/minute and 5 errors/minute"}
       />
       <Paragraph>
-        Now, what would we do if we looked at the graph again and we saw
-        something like this:
+        Now, what would we do if we were monitoring our service and looked at
+        the graph to find something like this:
       </Paragraph>
       <Image src={graph4} alt={"Graph displaying a spike in errors/minute"} />
       <Paragraph>
@@ -154,28 +151,116 @@ const Content: React.FC = () => {
       <Paragraph>
         The bottom line is that metrics did their job here. Now we're aware that
         things are going wrong instead of pretending they don't exist (which is
-        fun sometimes too). As services grow larger and more complex, you could
-        imagine we have lots of metrics to watch and hundreds of dashboards that
-        track different parts of it.
+        fun sometimes too).
       </Paragraph>
       <Paragraph>
-        As good as this is, it's not reasonable to expect someone to monitor all
-        these dashboards 24/7, nor would it be a good use of time to do so.
-        Emily would never be able to get anything else done, or go to sleep, or
-        really exist outside of staring at these dashboards waiting for
-        something to change. How do we fix that?
+        As good as this is, it's not reasonable to expect someone to monitor
+        dashboards 24/7, nor would it be a good use of time to do so. As
+        services grow larger and more complex, you could imagine there are lots
+        of metrics to watch and hundreds of dashboards that track different
+        parts of the service. We'd never be able to get anything else done, or
+        go to sleep, or really exist outside of staring at these dashboards
+        waiting for something to change. How do we fix that?
       </Paragraph>
+      <Header>Alerting</Header>
+      <Paragraph>
+        Imagine there were some way to automatically notify engineers when their
+        graphs change in a certain way. In the past example, we may want to be
+        emailed if the amount of traffic dips, or we might want a phone call if
+        the error rate spikes significantly. This is what alerting does for us.
+      </Paragraph>
+      <Paragraph>
+        Alerts are generally built with some query and some threshold. Lets say
+        the metric we want to create an alert on is called{" "}
+        <b>pricing.error_rate</b>, which we could interpret as the error rate
+        for the pricing service, and we want the alert to fire and email us when
+        the error rate is greater than 1%.
+      </Paragraph>
+      <Paragraph>
+        Different alerting systems have different ways to build alerts and refer
+        to metrics, but here's an example of what our alert configuration would
+        look like:
+        <ul>
+          <li>
+            <b>Alert name:</b> Error rate exceeds 1%
+          </li>
+          <li>
+            <b>Alert condition:</b> pricing.error_rate > 0.01
+          </li>
+          <li>
+            <b>On fire:</b> Email daniel.patrick.gil@gmail.com
+          </li>
+        </ul>
+      </Paragraph>
+      <Paragraph>
+        The alerting system will then be responsible for checking the value of{" "}
+        <b>pricing.error_rate</b>, and if it ever exceeds 0.01, then it should
+        email the email we gave it.
+      </Paragraph>
+      <Paragraph>
+        Alerts can be set on pretty much anything. Most services would benefit
+        from alerts on the obvious- alert if the service is crashing, alert if
+        the service is running out of memory or CPU. From there, we could build
+        alerts that are specific to the pricing service. Maybe we'd want to
+        alert if we start calculating a price of 0 for a bunch of rides.
+      </Paragraph>
+      <Paragraph>
+        The problem with alerting is that it's easy to get alert-crazy, to a
+        point where suddenly every possible failure in the application has an
+        alert on it. The consequences of doing so are well illustrated in The
+        Boy Who Cried Wolf- if the system starts waking you up every night at
+        3am for things that aren't really actionable, alerts are going to start
+        getting ignored.
+      </Paragraph>
+      <Paragraph>
+        The hardest part is assessing what's important enough to be alerted on.
+        When considering creating an alert on something, we need to think about
+        the following:
+        <ul>
+          <li>
+            If this functionality breaks, is there a clear way to fix the issue?
+            i.e. is it actionable?
+          </li>
+          <li>
+            Does this functionality affect the end user or the business? Will we
+            be literally losing money if this isn't working?
+          </li>
+          <li>
+            If this breaks at 3am, should I get woken up, or can it wait until
+            business hours?
+          </li>
+        </ul>
+        If the alert isn't urgent or actionable, maybe it doesn't need to be an
+        alert. Google has a great book that talks more about this{" "}
+        <TextLink
+          text="here"
+          link="https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/"
+        />
+        .
+      </Paragraph>
+      <Paragraph>
+        Okay, back to the larger picture. We're using metrics to track a bunch
+        of stuff. We're using alerts to tell us when that stuff goes wrong. Now
+        it's 3am, and you get a phone call from our alerting system, with a link
+        to this image:
+      </Paragraph>
+      <Image src={graph4} alt={"Graph displaying a spike in errors/minute"} />
+      <Paragraph>
+        But it's not clear what to do. We found out this thing is breaking, but
+        we need more information. Pillar 3.
+      </Paragraph>
+      <Header>Logging</Header>
     </>
   );
 };
 
 const content: Blog = {
-  title: "Baby's first observability",
+  title: "Baby's first observability lesson",
   year: "2020",
   month: "05",
   day: "16",
   description: "What it is and why it's important",
-  id: "template",
+  id: "observability",
   content: <Content />,
   language: Language.ENGLISH
 };
