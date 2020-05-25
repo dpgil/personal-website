@@ -20,7 +20,7 @@ const Content: React.FC = () => {
         long, and the other person in the elevator isn't the CEO, rather a
         friend that works in a totally different field. But when my mom asked me
         to explain what I've been working on all this time on the computer, I
-        struggled to express the concepts without babbling jargon.
+        struggled to express the concepts without babbling.
       </Paragraph>
       <Paragraph>
         Whenever I start something new, I look for simple, bird-eye view
@@ -178,7 +178,7 @@ const Content: React.FC = () => {
       </Paragraph>
       <Paragraph>
         Different alerting systems have different ways to build alerts and refer
-        to metrics, but here's an example of what our alert configuration would
+        to metrics, but here's an example of what our alert configuration could
         look like:
         <ul>
           <li>
@@ -202,7 +202,7 @@ const Content: React.FC = () => {
         from alerts on the obvious- alert if the service is crashing, alert if
         the service is running out of memory or CPU. From there, we could build
         alerts that are specific to the pricing service. Maybe we'd want to
-        alert if we start calculating a price of 0 for a bunch of rides.
+        alert if we start calculating a price of $0 for a bunch of rides.
       </Paragraph>
       <Paragraph>
         The problem with alerting is that it's easy to get alert-crazy, to a
@@ -301,8 +301,8 @@ const Content: React.FC = () => {
         to the system? Why is the system crashing from it? Also, is it expected
         for so many people to be traveling to/from 123 Sesame Street? If not,
         where are the requests coming from? To follow up on these questions, we
-        might start playing with the system and seeing what happens when 123
-        Sesame Street is input. Is the system consistently crashing with that
+        might start playing with the system and seeing what happens with 123
+        Sesame Street as input. Is the system consistently crashing with that
         address? Are there other addresses that are also causing crashes?
       </Paragraph>
       <Paragraph>
@@ -315,8 +315,8 @@ const Content: React.FC = () => {
         So the flow we have so far for investigating a problem is this:
         <ol>
           <li>Get notified of the issue through an alert</li>
-          <li>See what's going on/when it start by looking at metrics</li>
-          <li>Find more detailed information searching the logs</li>
+          <li>See what's going on and when it started by looking at metrics</li>
+          <li>Find more detailed information by searching the logs</li>
         </ol>
         This can be enough information for a lot of issues. We might find an
         obvious error by inputting 123 Sesame Street into the system, and then
@@ -352,10 +352,10 @@ const Content: React.FC = () => {
       <Paragraph>
         Now things are a big more complicated. When the user sees something go
         wrong, is the problem in the pricing service? Or is it an issue in the
-        location service? Or an issue even further down. With this large tree of
-        dependencies, the pricing service could <i>depend</i> on some
-        functionality from service D, and a problem in that code could surface
-        as a crash in the app to the user.
+        location service? Or an issue even further down? With this large tree of
+        dependencies, the pricing service <i>depends</i> on some functionality
+        from service D, and a problem in that code could surface as a crash in
+        the app to the user.
       </Paragraph>
       <Paragraph>
         In order to figure this out, we could look at the logs for the pricing
@@ -386,7 +386,7 @@ const Content: React.FC = () => {
       <Paragraph>
         Tracing can help fix this issue by following a request through its whole
         lifecycle and visualizing it. There are a lot of tracing programs that
-        come with must better UI than this, but suppose we looked at the traces
+        come with much better UI than this, but suppose we looked at the traces
         for a request to the pricing service and saw the following:
         <ol>
           <li>Pricing service</li>
@@ -399,7 +399,19 @@ const Content: React.FC = () => {
         and we can go look at the logs for service A to find out more about
         what's going on.
       </Paragraph>
+      <Paragraph>
+        In essence, tracing helps us understand where in a chain of requests
+        things are failing.
+      </Paragraph>
       <Header>Conclusion</Header>
+      <Paragraph>
+        In summary: metrics act as sensors and track data continuously across
+        our applications- we use graphs to visualize this data. Alerts are what
+        pull the alarm when things eventually go wrong. Logs provide us with a
+        more detailed state of the world that help understand a particular issue
+        on a particular computer, and finally, tracing helps us track down
+        problems between different services in our system.
+      </Paragraph>
       <Paragraph>
         Without any of these tools, we wouldn't have known there was a problem
         at all. With them, we're able to quickly detect problems, understand
@@ -407,11 +419,11 @@ const Content: React.FC = () => {
       </Paragraph>
       <Paragraph>
         It's important that these tools work really, really well. Systems will
-        break. The real question is how quickly we can respond to failures and
-        fix them. Going off Wikipedia, Facebook generates $70B of revenue every
-        year. This comes down to $133,181/minute. Imagine you're an engineer at
-        Facebook and the site completely crashes- every minute that goes by that
-        the problem is not fixed is money lost.
+        break. We know this. The real question is how quickly we can respond to
+        failures and fix them. Going off Wikipedia, Facebook generates $70B of
+        revenue every year. This comes down to $133,181/minute. Imagine you're
+        an engineer at Facebook and the site completely crashes- every minute
+        that goes by that the problem is not fixed is money lost.
       </Paragraph>
       <Paragraph>
         Hopefully this has helped you understand what observability is, its
