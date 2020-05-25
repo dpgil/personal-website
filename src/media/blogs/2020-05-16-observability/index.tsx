@@ -3,7 +3,6 @@ import { Blog } from "../index";
 import { Language } from "../language";
 import { TextLink } from "../../../common";
 import { Header, Image, Paragraph } from "../tags";
-import obs0 from "./obs-0.png";
 import graph0 from "./graph-0.png";
 import graph1 from "./graph-1.png";
 import graph2 from "./graph-2.png";
@@ -51,44 +50,44 @@ const Content: React.FC = () => {
         build an example:
       </Paragraph>
       <Paragraph>
-        Emily, a software engineer, works at a ride sharing company and is in
+        We're software engineers that work at a ride sharing company and are in
         charge of the pricing service. Calculating the price of taking a ride
-        between two points on a map is hard, Emily has to keep in mind distance
+        between two points on a map is hard, we have to keep in mind distance
         traveled, time of day, supply and demand, different currencies, and much
         more. Instead of expecting every engineer to implement this logic on
-        their own, Emily is a pricing specialist, and just works on building out
+        their own, we're the pricing specialists, and just work on building out
         this pricing system. Then other engineers will use that service by
         sending it two addresses and expecting a price in return.
       </Paragraph>
       <Paragraph>
         Someone opens up the ride sharing app on their phone, enters in two
-        addresses, and sees a price for the ride show up on their screen. We
-        could draw a diagram that represents this:
-      </Paragraph>
-      <Image
-        src={obs0}
-        alt={"Diagram showing flow between the user and the pricing service"}
-      />
-      <Paragraph>(The smiley is kind of horrifying, sorry.)</Paragraph>
-      <Paragraph>
-        So we have this diagram. Try to think of some places things could go
-        wrong. Here are a few: are valid requests being sent to the service? Are
-        valid responses being sent from the service? Is the service crashing at
-        any point?
+        addresses, and sees a price for the ride show up on their screen. From
+        the service's point of view, the order of events is this:
+        <ol>
+          <li>Two addresses are sent from the user to the service</li>
+          <li>The price of the ride is calculated</li>
+          <li>The price is sent back to the user</li>
+        </ol>
+        Try to think of some places things could go wrong. Here are a few: are
+        valid addresses being sent to the service? Are valid prices being sent
+        from the service? Is the service crashing at any point? We need a few
+        tools to help us answer these questions.
       </Paragraph>
       <Paragraph>
-        Metrics are needed to answer any of these questions.
+        We're going to use all four pillars of observability to help us detect
+        and solve a problem with the pricing service to better understand the
+        role each pillar plays. Let's start with metrics.
       </Paragraph>
       <Header>Metrics</Header>
       <Paragraph>
-        Let's modify the service so that every single time someone makes a
-        request, the service emits some metric.
+        Suppose we modify the pricing service so that every single time someone
+        makes a request, the service emits some metric.
       </Paragraph>
       <Paragraph>
         Then we could look at a graph that shows our metric over time. Let's say
         the service is receiving 500 requests/minute. We could see a graph like
-        this, where the y-axis repesents the number of requests, and the x-axis
-        represents time:
+        this, where the y-axis repesents the number of requests made in the last
+        minute, and the x-axis represents time:
       </Paragraph>
       <Image
         src={graph0}
@@ -247,11 +246,76 @@ const Content: React.FC = () => {
       <Image src={graph4} alt={"Graph displaying a spike in errors/minute"} />
       <Paragraph>
         But it's not clear what to do. We found out this thing is breaking, but
-        we need more information. Pillar 3.
+        we need more information.
       </Paragraph>
       <Header>Logging</Header>
+      <Paragraph>
+        In short, logs are ways to record events that happened on a computer.
+        They're similar to metrics in that sense, but where metrics are focused
+        on recording small data points that are analyzed in aggregate, logs are
+        more concerned with providing single data points that are more detailed.
+      </Paragraph>
+      <Paragraph>
+        Back to the example above with errors occurring with the pricing
+        service- we found out that a problem exists but we don't know what's
+        going on. One question we might want to answer could be: what is the
+        input to our system when we see these errors? In the context of the
+        pricing system, what start and end addresses are causing the system to
+        crash?
+      </Paragraph>
+      <Paragraph>
+        A log would do the trick. Somewhere in our code, we'll have something
+        that tries to calculate the price, and if that fails, we can log the
+        start and end addresses. Let's say we're investigating the increased
+        error rate and we see three logs as follows:
+        <ul>
+          <li style={{ marginBottom: 10 }}>
+            11:16:25: Error calculating price
+            <br />
+            <span style={indented}>Start address: 123 Sesame Street</span>
+            <br />
+            <span style={indented}>End address: 42 Walt Court</span>
+          </li>
+          <li style={{ marginBottom: 10 }}>
+            11:16:40: Error calculating price
+            <br />
+            <span style={indented}>Start address: 123 Sesame Street</span>
+            <br />
+            <span style={indented}>End address: 1600 Pennsylvania Avenue</span>
+          </li>
+          <li style={{ marginBottom: 10 }}>
+            11:17:03: Error calculating price
+            <br />
+            <span style={indented}>Start address: 9 Berry Lane</span>
+            <br />
+            <span style={indented}>End address: 123 Sesame Street</span>
+          </li>
+        </ul>
+        What's suspicious? 123 Sesame Street is an address in every error log-
+        it's pretty likely this is contributing to the problem.
+      </Paragraph>
+      <Paragraph>
+        Now we might have a few more questions to get a better idea of what's
+        going on. What is happening when 123 Sesame Street is provided as input
+        to the system? Why is the system crashing from it? Also, is it expected
+        for so many people to be traveling to/from 123 Sesame Street? If not,
+        where are the requests coming from? To follow up on these questions, we
+        might start playing with the system and seeing what happens when 123
+        Sesame Street is input. Is the system consistently crashing with that
+        address? Are there other addresses that are also causing crashes?
+      </Paragraph>
+      <Paragraph>
+        Logs are used to provide more verbose information on the state of the
+        system. Just like metrics and dashboards, the expectation is not to be
+        monitoring logs just waiting for something to happen- typically logs are
+        there to aid in investigation after an issue is known.
+      </Paragraph>
     </>
   );
+};
+
+const indented: React.CSSProperties = {
+  marginLeft: 15
 };
 
 const content: Blog = {
