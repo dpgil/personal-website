@@ -8,6 +8,8 @@ import graph1 from "./graph-1.png";
 import graph2 from "./graph-2.png";
 import graph3 from "./graph-3.png";
 import graph4 from "./graph-4.png";
+import diagram0 from "./diagram-0.png";
+import dependencies0 from "./dependencies-0.png";
 
 const Content: React.FC = () => {
   return (
@@ -40,9 +42,8 @@ const Content: React.FC = () => {
       <Paragraph>
         This data is important. Without it, your app could be crashing for 100%
         of users and you wouldn't have the slightest idea. It would be like
-        trying to catch a fish but just throwing the whole fishing pole into the
-        lake. Or building a car but not adding an odometer, or a gas tank meter,
-        or engine warning lights. You get the idea.
+        building a car but not adding an odometer, or a gas tank meter, or
+        engine warning lights. You get the idea.
       </Paragraph>
       <Paragraph>
         Observability is composed of four pillars: metrics, alerting, logging,
@@ -310,6 +311,113 @@ const Content: React.FC = () => {
         monitoring logs just waiting for something to happen- typically logs are
         there to aid in investigation after an issue is known.
       </Paragraph>
+      <Paragraph>
+        So the flow we have so far for investigating a problem is this:
+        <ol>
+          <li>Get notified of the issue through an alert</li>
+          <li>See what's going on/when it start by looking at metrics</li>
+          <li>Find more detailed information searching the logs</li>
+        </ol>
+        This can be enough information for a lot of issues. We might find an
+        obvious error by inputting 123 Sesame Street into the system, and then
+        we could go ahead and work on fixing it. There are cases, however, where
+        we need another tool.
+      </Paragraph>
+      <Header>Tracing</Header>
+      <Paragraph>
+        Without going into too much detail, the need for tracing arises when
+        systems start becoming more complex. In the pricing example, let's say
+        that we actually depend on another service for some information. For
+        example, when given the address 123 Sesame Street, how do we know it's
+        the 123 Sesame Street in Dracut, MA or the one in Wurtsboro, NY? Let's
+        pretend that the pricing service depends on another service, the
+        location service, to disambiguate addresses.
+      </Paragraph>
+      <Paragraph>
+        But then, the location service also depends on a few other services, and
+        those services depend on other services. Suddenly we have this large
+        tree of dependencies from one request to the pricing service. This is
+        kind of like when you open up your Facebook news feed- it's possible
+        thousands of requests are made, to the friends service, groups,
+        birthdays, news, rankings, etc, just to provide you with the information
+        on your news feed.
+      </Paragraph>
+      <Paragraph>
+        A diagram of these dependencies might look like the following:
+      </Paragraph>
+      <Image
+        src={diagram0}
+        alt="A tree of dependencies from the pricing service"
+      />
+      <Paragraph>
+        Now things are a big more complicated. When the user sees something go
+        wrong, is the problem in the pricing service? Or is it an issue in the
+        location service? Or an issue even further down. With this large tree of
+        dependencies, the pricing service could <i>depend</i> on some
+        functionality from service D, and a problem in that code could surface
+        as a crash in the app to the user.
+      </Paragraph>
+      <Paragraph>
+        In order to figure this out, we could look at the logs for the pricing
+        service, then look at the logs for the location service, then service A,
+        then service D, until we track which service we think the problem is in.
+        If the pricing service and the location service both had errors, but
+        service A had no errors, the problem is most likely in the location
+        service. The problem is that this method doesn't scale. It's common for
+        systems at large companies to have hundreds or thousands of different
+        services with many dependencies between them.{" "}
+        <TextLink
+          text="This great post"
+          link="https://blog.twitter.com/engineering/en_us/a/2013/observability-at-twitter.html"
+        />{" "}
+        about observability at Twitter (the ones who coined the term) shows what
+        the service dependencies at Twitter were in 2013:
+      </Paragraph>
+      <Image
+        src={dependencies0}
+        alt="Image showing hundreds to thousands of services and maybe tens of thousands of dependencies between them"
+      />
+      <Paragraph>
+        The names outside of the circle are the names of different services at
+        Twitter, and the lines connecting them in the middle are dependencies
+        between them. So yeah, we probably won't be searching the logs for every
+        pricing issue.
+      </Paragraph>
+      <Paragraph>
+        Tracing can help fix this issue by following a request through its whole
+        lifecycle and visualizing it. There are a lot of tracing programs that
+        come with must better UI than this, but suppose we looked at the traces
+        for a request to the pricing service and saw the following:
+        <ol>
+          <li>Pricing service</li>
+          <li>Location service</li>
+          <li>Service A: Error</li>
+        </ol>
+        Okay, so the request was able to get to the pricing service, then
+        another was made to the location service, then another to service A
+        where we ultimately hit an error. Now we know service A is the issue,
+        and we can go look at the logs for service A to find out more about
+        what's going on.
+      </Paragraph>
+      <Header>Conclusion</Header>
+      <Paragraph>
+        Without any of these tools, we wouldn't have known there was a problem
+        at all. With them, we're able to quickly detect problems, understand
+        more about them, and dig into their root causes.
+      </Paragraph>
+      <Paragraph>
+        It's important that these tools work really, really well. Systems will
+        break. The real question is how quickly we can respond to failures and
+        fix them. Going off Wikipedia, Facebook generates $70B of revenue every
+        year. This comes down to $133,181/minute. Imagine you're an engineer at
+        Facebook and the site completely crashes- every minute that goes by that
+        the problem is not fixed is money lost.
+      </Paragraph>
+      <Paragraph>
+        Hopefully this has helped you understand what observability is, its
+        importance, and how to use different observability tools to detect and
+        diagnose issues in systems. Bye!
+      </Paragraph>
     </>
   );
 };
@@ -319,10 +427,10 @@ const indented: React.CSSProperties = {
 };
 
 const content: Blog = {
-  title: "Baby's first observability lesson",
+  title: "ELI5: Observability",
   year: "2020",
   month: "05",
-  day: "16",
+  day: "25",
   description: "What it is and why it's important",
   id: "observability",
   content: <Content />,
