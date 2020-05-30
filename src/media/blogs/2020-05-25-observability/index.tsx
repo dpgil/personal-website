@@ -87,8 +87,8 @@ const Content: React.FC = () => {
       <Paragraph>
         Then we could look at a graph that shows our metric over time. Let's say
         the service is receiving 500 requests/minute. We could see a graph like
-        this, where the y-axis repesents the number of requests made in the last
-        minute, and the x-axis represents time:
+        this, where the y-axis represents the number of requests made in the
+        last minute, and the x-axis represents time:
       </Paragraph>
       <Image
         src={graph0}
