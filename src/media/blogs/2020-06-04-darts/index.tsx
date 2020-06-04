@@ -2,7 +2,7 @@ import React from "react";
 import { Blog } from "../index";
 import { Language } from "../language";
 import { TextLink } from "../../../common";
-import { Header, Paragraph } from "../tags";
+import { Paragraph } from "../tags";
 
 const Content: React.FC = () => {
   return (
