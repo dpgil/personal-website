@@ -3,7 +3,7 @@ import { Blog } from "../../media/blogs";
 
 const wrapperStyle: React.CSSProperties = {
   textAlign: "left",
-  fontSize: 20,
+  fontSize: 18,
   paddingBottom: 30
 };
 
