@@ -302,7 +302,7 @@ const content: Blog = {
   month: "06",
   day: "04",
   description: "Unnecessary lossless compression",
-  id: "template",
+  id: "darts",
   content: <Content />,
   language: Language.ENGLISH
 };
