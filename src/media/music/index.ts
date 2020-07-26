@@ -1,5 +1,6 @@
 const blue = require("./blue.wav");
 const comfortable = require("./comfortable.mp3");
+const deep_end = require("./deep_end.wav");
 const escritorio = require("./escritorio.wav");
 const finding = require("./finding.wav");
 const flying = require("./flying.wav");
@@ -12,6 +13,7 @@ const wall = require("./wall.wav");
 export type Song = { name: string; src: string };
 
 export const songs: Song[] = [
+  { name: "deep end", src: deep_end },
   { name: "escritorio", src: escritorio },
   { name: "wall", src: wall },
   { name: "finding", src: finding },
