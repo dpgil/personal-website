@@ -7,6 +7,12 @@ import { ImageBlock } from "./ImageBlock";
 import { linkStyle } from "../../common";
 import { images } from "../../media/art";
 import { Routes } from "../../routes";
+import { maxPageWidth } from "../../common/constants";
+
+const pageStyle: React.CSSProperties = {
+  maxWidth: maxPageWidth * 2,
+  margin: "auto"
+};
 
 export const ArtPage: React.FC<{ history: History }> = props => {
   const path = props.history.location.pathname;
@@ -23,7 +29,7 @@ export const ArtPage: React.FC<{ history: History }> = props => {
   }
 
   return (
-    <div>
+    <div style={pageStyle}>
       <Grid>
         {images.map(i => (
           <Link
