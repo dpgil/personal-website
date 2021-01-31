@@ -4,17 +4,24 @@ import { blockColumnStyle } from "./ProjectBlock.styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 const wrapperStyle: React.CSSProperties = {
-  height: "100%"
+  height: "100%",
+  textAlign: "left"
 };
 
 const titleStyle: React.CSSProperties = {
   fontWeight: "bold",
   paddingBottom: 15,
-  fontSize: 35
+  fontSize: 30,
+  display: "inline-block"
 };
 
 const descriptionStyle: React.CSSProperties = {
   fontSize: 20
+};
+
+const githubIconStyle: React.CSSProperties = {
+  paddingLeft: 10,
+  color: "inherit"
 };
 
 export const ProjectInfo: React.FC<{ project: Project }> = props => {
@@ -23,20 +30,13 @@ export const ProjectInfo: React.FC<{ project: Project }> = props => {
   return (
     <div style={blockColumnStyle}>
       <div style={wrapperStyle}>
-        <div style={titleStyle}>{project.title}</div>
-        <div style={descriptionStyle}>
-          {project.description}
-          <div style={{ paddingTop: 15 }}>
-            <a
-              style={{ color: "inherit", fontSize: "large" }}
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon fontSize="large" />
-            </a>
-          </div>
-        </div>
+        <a href={project.link} style={{ color: "inherit" }}>
+          <div style={titleStyle}>{project.title}</div>
+        </a>
+        <a style={githubIconStyle} href={project.github}>
+          <GitHubIcon />
+        </a>
+        <div style={descriptionStyle}>{project.description}</div>
       </div>
     </div>
   );

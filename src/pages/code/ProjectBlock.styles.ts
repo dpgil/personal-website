@@ -9,25 +9,13 @@ export const separatorStyle: React.CSSProperties = {
   width: "70%",
   maxWidth: 500,
   margin: "auto",
-  marginTop: 50,
-  marginBottom: 50
+  marginTop: 25,
+  marginBottom: 25
 };
-
-const maxBlockWidth = 360;
 
 export const blockColumnStyle: React.CSSProperties = {
   display: "inline-block",
-  maxWidth: maxBlockWidth,
-  verticalAlign: "middle",
-  padding: 10
-};
-
-export const getProjectImageStyle = (hover: boolean): React.CSSProperties => {
-  return {
-    width: "100%",
-    borderRadius: 10,
-    opacity: hover ? 0.5 : 1
-  };
+  verticalAlign: "middle"
 };
 
 export const bodyStyle: React.CSSProperties = {

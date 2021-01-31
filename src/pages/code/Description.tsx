@@ -14,7 +14,7 @@ export const Description: React.FC = () => {
   return (
     <>
       <div style={descriptionStyle}>
-        for money, i write code. i currently work in observability for lyft in
+        i write code for money. i currently work in observability for lyft in
         nyc. around 80% of my time is spent building systems in go, the rest on
         front end work in react/typescript.
       </div>
@@ -29,7 +29,7 @@ export const Description: React.FC = () => {
       </div>
       <div style={{ ...descriptionStyle, paddingBottom: 0 }}>
         i also write code for fun- below are some projects that i've worked on
-        in my free time. click on the picture to go to the project's website
+        in my free time. click on the title to go to the project's website
       </div>
     </>
   );
