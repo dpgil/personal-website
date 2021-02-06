@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { History } from "history";
 import { Link } from "react-router-dom";
 import { BlogBlock } from "./BlogBlock";
@@ -8,6 +8,14 @@ import { linkStyle } from "../../common";
 import { blogs } from "../../media/blogs";
 import { Routes } from "../../routes";
 import { maxPageWidth } from "../../common/constants";
+
+function ScrollToTopOnMount() {
+  useEffect(() => {
+    window.scrollTo(0, 100);
+  }, []);
+
+  return null;
+}
 
 export const BlogPage: React.FC<{ history: History }> = props => {
   const path = props.history.location.pathname;
@@ -19,6 +27,7 @@ export const BlogPage: React.FC<{ history: History }> = props => {
       // We're on the detail page for some piece.
       return (
         <div style={pageStyle}>
+          <ScrollToTopOnMount />
           <DetailBlog blog={piece} />
         </div>
       );
