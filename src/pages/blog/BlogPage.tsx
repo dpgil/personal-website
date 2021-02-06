@@ -11,7 +11,7 @@ import { maxPageWidth } from "../../common/constants";
 
 function ScrollToTopOnMount() {
   useEffect(() => {
-    window.scrollTo(0, 100);
+    window.scrollTo(0, 135);
   }, []);
 
   return null;

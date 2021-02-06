@@ -4,11 +4,11 @@ import { Blog } from "../../media/blogs";
 const wrapperStyle: React.CSSProperties = {
   textAlign: "left",
   fontSize: 18,
-  paddingBottom: 30
+  paddingBottom: 50
 };
 
 const titleStyle: React.CSSProperties = {
-  paddingTop: 30,
+  paddingTop: 50,
   fontWeight: "bold",
   fontSize: 35
 };
