@@ -48,24 +48,3 @@ const landingOptionStyle: React.CSSProperties = {
   fontSize: 35,
   padding: 3
 };
-
-const LandingOption: React.FC<{
-  route: { path: string; name: string };
-}> = props => {
-  const { route } = props;
-
-  const child =
-    route.name === Routes.ContactPage.name ? (
-      <MailOutlineIcon fontSize="large" style={mailIconStyle} />
-    ) : (
-      <NavName name={route.name} />
-    );
-
-  return (
-    <div style={landingOptionStyle}>
-      <NavOption isSelected={false} route={route}>
-        {child}
-      </NavOption>
-    </div>
-  );
-};
