@@ -6,12 +6,12 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 
 const separator = " / ";
 
-const nameStyle: React.CSSProperties = {
+const getNameStyle = (leftPadding?: number) => ({
   fontSize: "40px",
   fontWeight: "bold",
   display: "inline-block",
-  padding: "0px 10px"
-};
+  padding: `0px 10px 0px ${leftPadding !== undefined ? leftPadding : 10}px`
+});
 
 const navOptionsStyle: React.CSSProperties = {
   padding: "0px 10px",
@@ -26,10 +26,13 @@ const mailIconStyle: React.CSSProperties = {
 
 interface NavOptionsProps {
   selectedPage?: Page;
+  leftPadding?: number;
 }
 
 export const NavOptions: React.FC<NavOptionsProps> = props => {
-  const { selectedPage } = props;
+  const { selectedPage, leftPadding } = props;
+
+  const nameStyle = getNameStyle(leftPadding) as React.CSSProperties;
 
   return (
     <div>
