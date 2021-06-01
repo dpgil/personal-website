@@ -10,11 +10,11 @@ const getNameStyle = (leftPadding?: number) => ({
   fontSize: "40px",
   fontWeight: "bold",
   display: "inline-block",
-  padding: `0px 10px 0px ${leftPadding !== undefined ? leftPadding : 10}px`
+  padding: `0px 20px 0px ${leftPadding !== undefined ? leftPadding : 10}px`
 });
 
 const navOptionsStyle: React.CSSProperties = {
-  padding: "0px 10px",
+  padding: "0px 10px 0px 0px",
   display: "inline-block",
   fontSize: "28px"
 };
@@ -49,13 +49,13 @@ export const NavOptions: React.FC<NavOptionsProps> = props => {
           <NavName name={Routes.ArtPage.name} />
         </NavOption>
         {separator}
-        <NavOption
+        {/* <NavOption
           isSelected={selectedPage === Page.CODE}
           route={Routes.CodePage}
         >
           <NavName name={Routes.CodePage.name} />
         </NavOption>
-        {separator}
+        {separator} */}
         <NavOption
           isSelected={selectedPage === Page.MUSIC}
           route={Routes.MusicPage}

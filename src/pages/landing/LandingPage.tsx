@@ -8,15 +8,8 @@ const pageStyle: React.CSSProperties = {
   maxWidth: "700px",
   margin: "auto",
   paddingBottom: 20,
-  paddingTop: 20,
+  paddingTop: 0,
   textAlign: "left"
-};
-
-const nameStyle: React.CSSProperties = {
-  fontSize: "40px",
-  fontWeight: "bold",
-  display: "inline-block",
-  paddingBottom: "10px"
 };
 
 const iconStyle: React.CSSProperties = {
