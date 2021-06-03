@@ -1,7 +1,5 @@
 import React from "react";
-import { NavName, NavOption, NavOptions } from "../../view";
-import { Routes } from "../../routes";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import { NavOptions } from "../../view";
 
 const pageStyle: React.CSSProperties = {
   width: "90%",
@@ -37,14 +35,4 @@ export const LandingPage: React.FC = () => {
       <div style={textStyle}>welcome to my page!</div>
     </div>
   );
-};
-
-const mailIconStyle: React.CSSProperties = {
-  verticalAlign: "middle",
-  paddingBottom: 1
-};
-
-const landingOptionStyle: React.CSSProperties = {
-  fontSize: 35,
-  padding: 3
 };
